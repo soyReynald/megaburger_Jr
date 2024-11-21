@@ -19,6 +19,11 @@ SET time_zone = "+00:00";
 
 --
 -- Base de datos: `hamburguers_bd`
+
+CREATE database hamburguers_bd;
+
+use hamburguers_bd;
+
 --
 
 -- --------------------------------------------------------
