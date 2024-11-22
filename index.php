@@ -30,7 +30,7 @@ $conn->close();
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/logo-198x66.ico" type="image/x-icon">
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,600,700,900%7CRaleway:500">
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -76,7 +76,6 @@ $conn->close();
       </div>
     </div>
     <div class="page">
-      <!-- Top Banner--><a class="section section-banner text-center d-none d-xl-block" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" style="background-image: url(images/banner/background-04-1920x60.jpg); background-image: -webkit-image-set( url(images/banner/background-04-1920x60.jpg) 1x, url(images/banner/background-04-3840x120.jpg) 2x )"><img src="images/banner/foreground-04-1600x60.png" srcset="images/banner/foreground-04-1600x60.png 1x, images/banner/foreground-04-3200x120.png 2x" alt="" width="1600" height="310"></a>
       <!-- Page Header-->
       <header class="section page-header">
         <!-- RD Navbar-->
@@ -117,14 +116,10 @@ $conn->close();
                   <div class="rd-navbar-main">
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.html">About us</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Typography</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contacts</a>
-                      </li>
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a></li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="orders.html">Orders</a></li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="menu.html">Menu</a></li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.html">About</a></li>
                     </ul>
                   </div>
                 </div>
@@ -196,25 +191,25 @@ $conn->close();
       <!-- Swiper-->
       <section class="section swiper-container swiper-slider swiper-slider-2 swiper-slider-3" data-loop="true" data-autoplay="5000" data-simulate-touch="false" data-slide-effect="fade">
         <div class="swiper-wrapper text-sm-left">
-          <div class="swiper-slide context-dark" data-slide-bg="images/slide-1-1920x753.jpg">
+          <div class="swiper-slide context-dark" data-slide-bg="images/baconBurger.jpg">
             <div class="swiper-slide-caption section-md">
               <div class="container">
                 <div class="row">
                   <div class="col-sm-9 col-md-8 col-lg-7 col-xl-7 offset-lg-1 offset-xxl-0">
-                    <h1 class="oh swiper-title"><span class="d-inline-block" data-caption-animate="slideInUp" data-caption-delay="0">Perfect pizza</span></h1>
-                    <p class="big swiper-text" data-caption-animate="fadeInLeft" data-caption-delay="300">Experience the taste of a perfect pizza at PizzaHouse, one of the best restaurants!</p><a class="button button-lg button-primary button-winona button-shadow-2" href="#" data-caption-animate="fadeInUp" data-caption-delay="300">View our menu</a>
+                    <h1 class="oh swiper-title"><span class="d-inline-block" data-caption-animate="slideInUp" data-caption-delay="0">Perfect Burgers</span></h1>
+                    <p class="big swiper-text" data-caption-animate="fadeInLeft" data-caption-delay="300">Experience the taste of a perfect Burger at MegaBurger, one of the best restaurants!</p><a class="button button-lg button-primary button-winona button-shadow-2" href="#" data-caption-animate="fadeInUp" data-caption-delay="300">View our menu</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="swiper-slide context-dark" data-slide-bg="images/slide-2-1920x753.jpg">
+          <div class="swiper-slide context-dark" data-slide-bg="images/ingredientesFrescos.jpg">
             <div class="swiper-slide-caption section-md">
               <div class="container">
                 <div class="row">
                   <div class="col-sm-8 col-lg-7 offset-lg-1 offset-xxl-0">
                     <h1 class="oh swiper-title"><span class="d-inline-block" data-caption-animate="slideInDown" data-caption-delay="0">Quality ingredients</span></h1>
-                    <p class="big swiper-text" data-caption-animate="fadeInRight" data-caption-delay="300">We use only the best ingredients to make one-of-a-kind pizzas for our customers.</p>
+                    <p class="big swiper-text" data-caption-animate="fadeInRight" data-caption-delay="300">We use only the best ingredients to make one-of-a-kind burgers for our customers.</p>
                     <div class="button-wrap oh"><a class="button button-lg button-primary button-winona button-shadow-2" href="#" data-caption-animate="slideInUp" data-caption-delay="0">View our menu</a></div>
                   </div>
                 </div>
@@ -339,18 +334,18 @@ $conn->close();
       <!-- Our Shop-->
       <section class="section section-lg bg-default">
         <div class="container">
-          <h3 class="oh-desktop"><span class="d-inline-block wow slideInUp">Selected Pizzas</span></h3>
+          <h3 class="oh-desktop"><span class="d-inline-block wow slideInUp">Selected Burgers</span></h3>
           <div class="row row-lg row-30">
             <div class="col-sm-6 col-lg-4 col-xl-3">
               <!-- Product-->
               <article class="product wow fadeInLeft" data-wow-delay=".15s">
-                <div class="product-figure"><img src="images/product-1-161x162.png" alt="" width="161" height="162"/>
+                <div class="product-figure"><img src="images/BaconBurger-164x164.jpg" alt="" width="161" height="162"/>
                 </div>
                 <div class="product-rating"><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star text-gray-13"></span>
                 </div>
-                <h6 class="product-title">Margherita Pizza</h6>
+                <h6 class="product-title">Bacon Burger</h6>
                 <div class="product-price-wrap">
-                  <div class="product-price">$24.00</div>
+                  <div class="product-price">$7.00</div>
                 </div>
                 <div class="product-button">
                   <div class="button-wrap"><a class="button button-xs button-primary button-winona" href="#">Add to cart</a></div>
@@ -361,13 +356,13 @@ $conn->close();
             <div class="col-sm-6 col-lg-4 col-xl-3">
               <!-- Product-->
               <article class="product wow fadeInLeft" data-wow-delay=".1s">
-                <div class="product-figure"><img src="images/product-2-161x162.png" alt="" width="161" height="162"/>
+                <div class="product-figure"><img src="images/Cheeseburger-600x600.png" alt="" width="161" height="162"/>
                 </div>
                 <div class="product-rating"><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span>
                 </div>
-                <h6 class="product-title">Mushroom Pizza</h6>
+                <h6 class="product-title">Cheese Burger</h6>
                 <div class="product-price-wrap">
-                  <div class="product-price">$24.00</div>
+                  <div class="product-price">$5.00</div>
                 </div>
                 <div class="product-button">
                   <div class="button-wrap"><a class="button button-xs button-primary button-winona" href="#">Add to cart</a></div>
@@ -378,13 +373,13 @@ $conn->close();
             <div class="col-sm-6 col-lg-4 col-xl-3">
               <!-- Product-->
               <article class="product wow fadeInLeft" data-wow-delay=".05s">
-                <div class="product-figure"><img src="images/product-3-161x162.png" alt="" width="161" height="162"/>
+                <div class="product-figure"><img src="images/TheMonsterBurger.jpg" alt="" width="161" height="162"/>
                 </div>
                 <div class="product-rating"><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star text-gray-13"></span>
                 </div>
-                <h6 class="product-title">Hawaiian Pizza</h6>
+                <h6 class="product-title">The Monster Burger</h6>
                 <div class="product-price-wrap">
-                  <div class="product-price">$24.00</div>
+                  <div class="product-price">$12.00</div>
                 </div>
                 <div class="product-button">
                   <div class="button-wrap"><a class="button button-xs button-primary button-winona" href="#">Add to cart</a></div>
@@ -395,14 +390,14 @@ $conn->close();
             <div class="col-sm-6 col-lg-4 col-xl-3">
               <!-- Product-->
               <article class="product wow fadeInLeft">
-                <div class="product-figure"><img src="images/product-4-161x162.png" alt="" width="161" height="162"/>
+                <div class="product-figure"><img src="images/SimpleBuger-164x164.jpg" alt="" width="161" height="162"/>
                 </div>
                 <div class="product-rating"><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span>
                 </div>
-                <h6 class="product-title">Pesto Pizza</h6>
+                <h6 class="product-title">Simple Burger</h6>
                 <div class="product-price-wrap">
-                  <div class="product-price product-price-old">$40.00</div>
-                  <div class="product-price">$24.00</div>
+                  <div class="product-price product-price-old">$5.00</div>
+                  <div class="product-price">$4.30</div>
                 </div>
                 <div class="product-button">
                   <div class="button-wrap"><a class="button button-xs button-primary button-winona" href="#">Add to cart</a></div>
@@ -658,7 +653,6 @@ $conn->close();
         </div>
       </section>
 
-      <!-- Bottom Banner--><a class="section section-banner" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" style="background-image: url(images/banner/background-03-1920x310.jpg); background-image: -webkit-image-set( url(images/banner/background-03-1920x310.jpg) 1x, url(images/banner/background-03-3840x620.jpg) 2x )"><img src="images/banner/foreground-03-1600x310.png" srcset="images/banner/foreground-03-1600x310.png 1x, images/banner/foreground-03-3200x620.png 2x" alt="" width="1600" height="310"></a>
       <!-- Page Footer-->
       <footer class="section footer-modern context-dark footer-modern-2">
         <div class="footer-modern-line">
@@ -747,7 +741,7 @@ $conn->close();
               <div class="col-md-6"><span>514 S. Magnolia St. Orlando, FL 32806</span></div>
               <div class="col-md-auto">
                 <!-- Rights-->
-                <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span></span><span>.&nbsp;</span><span>All Rights Reserved.</span><span> Design&nbsp;by&nbsp;<a href="https://www.templatemonster.com">TemplateMonster</a></span></p>
+                <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span></span><span>.&nbsp;</span><span>All Rights Reserved.</span></p>
               </div>
             </div>
           </div>
