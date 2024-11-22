@@ -123,66 +123,6 @@ $conn->close();
                     </ul>
                   </div>
                 </div>
-                <div class="rd-navbar-project-hamburger rd-navbar-project-hamburger-open rd-navbar-fixed-element-1" data-multitoggle=".rd-navbar-inner" data-multitoggle-blur=".rd-navbar-wrap" data-multitoggle-isolate="data-multitoggle-isolate">
-                  <div class="project-hamburger"><span class="project-hamburger-arrow"></span><span class="project-hamburger-arrow"></span><span class="project-hamburger-arrow"></span>
-                  </div>
-                </div>
-                <div class="rd-navbar-project">
-                  <div class="rd-navbar-project-header">
-                    <h5 class="rd-navbar-project-title">Gallery</h5>
-                    <div class="rd-navbar-project-hamburger rd-navbar-project-hamburger-close" data-multitoggle=".rd-navbar-inner" data-multitoggle-blur=".rd-navbar-wrap" data-multitoggle-isolate="data-multitoggle-isolate">
-                      <div class="project-close"><span></span><span></span></div>
-                    </div>
-                  </div>
-                  <div class="rd-navbar-project-content rd-navbar-content">
-                    <div>
-                      <div class="row gutters-20" data-lightgallery="group">
-                        <div class="col-6">
-                          <!-- Thumbnail Creative-->
-                          <article class="thumbnail thumbnail-creative"><a href="images/project-1-1200x800-original.jpg" data-lightgallery="item">
-                              <div class="thumbnail-creative-figure"><img src="images/project-1-195x164.jpg" alt="" width="195" height="164"/>
-                              </div>
-                              <div class="thumbnail-creative-caption"><span class="icon thumbnail-creative-icon linearicons-magnifier"></span></div></a></article>
-                        </div>
-                        <div class="col-6">
-                          <!-- Thumbnail Creative-->
-                          <article class="thumbnail thumbnail-creative"><a href="images/project-2-1200x800-original.jpg" data-lightgallery="item">
-                              <div class="thumbnail-creative-figure"><img src="images/project-2-195x164.jpg" alt="" width="195" height="164"/>
-                              </div>
-                              <div class="thumbnail-creative-caption"><span class="icon thumbnail-creative-icon linearicons-magnifier"></span></div></a></article>
-                        </div>
-                        <div class="col-6">
-                          <!-- Thumbnail Creative-->
-                          <article class="thumbnail thumbnail-creative"><a href="images/project-3-1200x800-original.jpg" data-lightgallery="item">
-                              <div class="thumbnail-creative-figure"><img src="images/project-3-195x164.jpg" alt="" width="195" height="164"/>
-                              </div>
-                              <div class="thumbnail-creative-caption"><span class="icon thumbnail-creative-icon linearicons-magnifier"></span></div></a></article>
-                        </div>
-                        <div class="col-6">
-                          <!-- Thumbnail Creative-->
-                          <article class="thumbnail thumbnail-creative"><a href="images/project-4-1200x800-original.jpg" data-lightgallery="item">
-                              <div class="thumbnail-creative-figure"><img src="images/project-4-195x164.jpg" alt="" width="195" height="164"/>
-                              </div>
-                              <div class="thumbnail-creative-caption"><span class="icon thumbnail-creative-icon linearicons-magnifier"></span></div></a></article>
-                        </div>
-                        <div class="col-6">
-                          <!-- Thumbnail Creative-->
-                          <article class="thumbnail thumbnail-creative"><a href="images/project-5-1200x800-original.jpg" data-lightgallery="item">
-                              <div class="thumbnail-creative-figure"><img src="images/project-5-195x164.jpg" alt="" width="195" height="164"/>
-                              </div>
-                              <div class="thumbnail-creative-caption"><span class="icon thumbnail-creative-icon linearicons-magnifier"></span></div></a></article>
-                        </div>
-                        <div class="col-6">
-                          <!-- Thumbnail Creative-->
-                          <article class="thumbnail thumbnail-creative"><a href="images/project-6-1200x800-original.jpg" data-lightgallery="item">
-                              <div class="thumbnail-creative-figure"><img src="images/project-6-195x164.jpg" alt="" width="195" height="164"/>
-                              </div>
-                              <div class="thumbnail-creative-caption"><span class="icon thumbnail-creative-icon linearicons-magnifier"></span></div></a></article>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </nav>
@@ -242,11 +182,9 @@ $conn->close();
               <div class="oh-desktop">
                 <!-- Services Terri-->
                 <article class="services-terri wow slideInUp">
-                  <div class="services-terri-figure"><img src="images/menu-1-370x278.jpg" alt="" width="370" height="278"/>
+                  <div class="services-terri-figure"><img src="images/Cheeseburger-600x600.png" alt="" width="370" height="278"/>
                   </div>
-                  <div class="services-terri-caption"><span class="services-terri-icon linearicons-leaf"></span>
-                    <h5 class="services-terri-title"><a href="#">Salads</a></h5>
-                  </div>
+                  <div class="services-terri-figure"><h5>Cheese Burger</h5></div>
                 </article>
               </div>
             </div>
@@ -254,11 +192,9 @@ $conn->close();
               <div class="oh-desktop">
                 <!-- Services Terri-->
                 <article class="services-terri wow slideInDown">
-                  <div class="services-terri-figure"><img src="images/menu-2-370x278.jpg" alt="" width="370" height="278"/>
+                  <div class="services-terri-figure"><img src="images/BaconBurger-164x164.jpg" alt="" width="370" height="278"/>
                   </div>
-                  <div class="services-terri-caption"><span class="services-terri-icon linearicons-pizza"></span>
-                    <h5 class="services-terri-title"><a href="#">Pizzas</a></h5>
-                  </div>
+                  <div class="services-terri-figure"><h5>Bacon Burger</h5></div>
                 </article>
               </div>
             </div>
@@ -266,11 +202,9 @@ $conn->close();
               <div class="oh-desktop">
                 <!-- Services Terri-->
                 <article class="services-terri wow slideInUp">
-                  <div class="services-terri-figure"><img src="images/menu-3-370x278.jpg" alt="" width="370" height="278"/>
+                  <div class="services-terri-figure"><img src="images/TheMonsterBurger.jpg" alt="" width="370" height="278"/>
                   </div>
-                  <div class="services-terri-caption"><span class="services-terri-icon linearicons-hamburger"></span>
-                    <h5 class="services-terri-title"><a href="#">Burgers</a></h5>
-                  </div>
+                  <div class="services-terri-figure"><h5>Monster Burger</h5></div>
                 </article>
               </div>
             </div>
@@ -278,11 +212,9 @@ $conn->close();
               <div class="oh-desktop">
                 <!-- Services Terri-->
                 <article class="services-terri wow slideInDown">
-                  <div class="services-terri-figure"><img src="images/menu-4-370x278.jpg" alt="" width="370" height="278"/>
+                  <div class="services-terri-figure"><img src="images/SimpleBuger-164x164.jpg" alt="" width="370" height="278"/>
                   </div>
-                  <div class="services-terri-caption"><span class="services-terri-icon linearicons-ice-cream"></span>
-                    <h5 class="services-terri-title"><a href="#">Desserts</a></h5>
-                  </div>
+                  <div class="services-terri-figure"><h5>Simple Burger</h5></div>
                 </article>
               </div>
             </div>
@@ -290,11 +222,9 @@ $conn->close();
               <div class="oh-desktop">
                 <!-- Services Terri-->
                 <article class="services-terri wow slideInUp">
-                  <div class="services-terri-figure"><img src="images/menu-5-370x278.jpg" alt="" width="370" height="278"/>
+                  <div class="services-terri-figure"><img src="images/CrackBurger-164x164.jpg" alt="" width="370" height="278"/>
                   </div>
-                  <div class="services-terri-caption"><span class="services-terri-icon linearicons-coffee-cup"></span>
-                    <h5 class="services-terri-title"><a href="#">Drinks</a></h5>
-                  </div>
+                  <div class="services-terri-figure"><h5>Crack Burger</h5></div>
                 </article>
               </div>
             </div>
@@ -302,11 +232,9 @@ $conn->close();
               <div class="oh-desktop">
                 <!-- Services Terri-->
                 <article class="services-terri wow slideInDown">
-                  <div class="services-terri-figure"><img src="images/menu-6-370x278.jpg" alt="" width="370" height="278"/>
+                  <div class="services-terri-figure"><img src="images/GulaBurger-164x164.jpg" alt="" width="370" height="278"/>
                   </div>
-                  <div class="services-terri-caption"><span class="services-terri-icon linearicons-steak"></span>
-                    <h5 class="services-terri-title"><a href="#">Seafood</a></h5>
-                  </div>
+                  <div class="services-terri-figure"><h5>Gula Burger</h5></div>
                 </article>
               </div>
             </div>
