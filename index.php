@@ -88,7 +88,7 @@ $conn->close();
                   <!-- RD Navbar Toggle-->
                   <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                   <!-- RD Navbar Brand-->
-                  <div class="rd-navbar-brand"><a class="brand" href="index.html"><img class="brand-logo-dark" src="images/logo-198x66.png" alt="" width="198" height="66"/></a></div>
+                  <div class="rd-navbar-brand"><a class="brand" href="index.html"><img class="brand-logo-dark" src="images/logo-198x66.png" alt="" width="99" height="33"/></a></div>
                 </div>
                 <div class="rd-navbar-right rd-navbar-nav-wrap">
                   <div class="rd-navbar-aside">
@@ -119,7 +119,7 @@ $conn->close();
                       <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a></li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="orders.html">Orders</a></li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="menu.html">Menu</a></li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.html">About</a></li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.html">About</a></li> 
                     </ul>
                   </div>
                 </div>
@@ -182,7 +182,7 @@ $conn->close();
               <div class="oh-desktop">
                 <!-- Services Terri-->
                 <article class="services-terri wow slideInUp">
-                  <div class="services-terri-figure"><img src="images/Cheeseburger-600x600.png" alt="" width="370" height="278"/>
+                  <div class="services-terri-figure"><a href="cheeseBurgerDetails.html"><img src="images/Cheeseburger-600x600.png" alt="" width="370" height="278"/></a>
                   </div>
                   <div class="services-terri-figure"><h5>Cheese Burger</h5></div>
                 </article>
@@ -192,7 +192,7 @@ $conn->close();
               <div class="oh-desktop">
                 <!-- Services Terri-->
                 <article class="services-terri wow slideInDown">
-                  <div class="services-terri-figure"><img src="images/BaconBurger-164x164.jpg" alt="" width="370" height="278"/>
+                  <div class="services-terri-figure"><a href="baconBurgerDetails.html"><img src="images/BaconBurger-164x164.jpg" alt="" width="370" height="278"/></a>
                   </div>
                   <div class="services-terri-figure"><h5>Bacon Burger</h5></div>
                 </article>
@@ -202,7 +202,7 @@ $conn->close();
               <div class="oh-desktop">
                 <!-- Services Terri-->
                 <article class="services-terri wow slideInUp">
-                  <div class="services-terri-figure"><img src="images/TheMonsterBurger.jpg" alt="" width="370" height="278"/>
+                  <div class="services-terri-figure"><a href="monsterBurgerDetails.html"><img src="images/TheMonsterBurger.jpg" alt="" width="370" height="278"/></a>
                   </div>
                   <div class="services-terri-figure"><h5>Monster Burger</h5></div>
                 </article>
@@ -212,7 +212,7 @@ $conn->close();
               <div class="oh-desktop">
                 <!-- Services Terri-->
                 <article class="services-terri wow slideInDown">
-                  <div class="services-terri-figure"><img src="images/SimpleBuger-164x164.jpg" alt="" width="370" height="278"/>
+                  <div class="services-terri-figure"><a href="SimpleBurgerDetails.html"><img src="images/SimpleBuger-164x164.jpg" alt="" width="370" height="278"/></a>
                   </div>
                   <div class="services-terri-figure"><h5>Simple Burger</h5></div>
                 </article>
@@ -222,7 +222,7 @@ $conn->close();
               <div class="oh-desktop">
                 <!-- Services Terri-->
                 <article class="services-terri wow slideInUp">
-                  <div class="services-terri-figure"><img src="images/CrackBurger-164x164.jpg" alt="" width="370" height="278"/>
+                  <div class="services-terri-figure"><a href="crackBurgerDetails.html"><img src="images/CrackBurger-164x164.jpg" alt="" width="370" height="278"/></a>
                   </div>
                   <div class="services-terri-figure"><h5>Crack Burger</h5></div>
                 </article>
@@ -232,7 +232,7 @@ $conn->close();
               <div class="oh-desktop">
                 <!-- Services Terri-->
                 <article class="services-terri wow slideInDown">
-                  <div class="services-terri-figure"><img src="images/GulaBurger-164x164.jpg" alt="" width="370" height="278"/>
+                  <div class="services-terri-figure"><a href="gulaBurgerDetails.html"><img src="images/GulaBurger-164x164.jpg" alt="" width="370" height="278"/></a>
                   </div>
                   <div class="services-terri-figure"><h5>Gula Burger</h5></div>
                 </article>
@@ -277,7 +277,7 @@ $conn->close();
                 </div>
                 <div class="product-button">
                   <div class="button-wrap"><a class="button button-xs button-primary button-winona" href="#">Add to cart</a></div>
-                  <div class="button-wrap"><a class="button button-xs button-secondary button-winona" href="#">View Product</a></div>
+                  <div class="button-wrap"><a class="button button-xs button-secondary button-winona" href="baconBurgerDetails.html">View Product</a></div>
                 </div>
               </article>
             </div>
@@ -294,7 +294,7 @@ $conn->close();
                 </div>
                 <div class="product-button">
                   <div class="button-wrap"><a class="button button-xs button-primary button-winona" href="#">Add to cart</a></div>
-                  <div class="button-wrap"><a class="button button-xs button-secondary button-winona" href="#">View Product</a></div>
+                  <div class="button-wrap"><a class="button button-xs button-secondary button-winona" href="cheeseBurgerDetails.html">View Product</a></div>
                 </div><span class="product-badge product-badge-new">New</span>
               </article>
             </div>
@@ -311,7 +311,7 @@ $conn->close();
                 </div>
                 <div class="product-button">
                   <div class="button-wrap"><a class="button button-xs button-primary button-winona" href="#">Add to cart</a></div>
-                  <div class="button-wrap"><a class="button button-xs button-secondary button-winona" href="#">View Product</a></div>
+                  <div class="button-wrap"><a class="button button-xs button-secondary button-winona" href="monsterBurgerDetails.html">View Product</a></div>
                 </div>
               </article>
             </div>
@@ -329,7 +329,7 @@ $conn->close();
                 </div>
                 <div class="product-button">
                   <div class="button-wrap"><a class="button button-xs button-primary button-winona" href="#">Add to cart</a></div>
-                  <div class="button-wrap"><a class="button button-xs button-secondary button-winona" href="#">View Product</a></div>
+                  <div class="button-wrap"><a class="button button-xs button-secondary button-winona" href="SimpleBurgerDetails.html">View Product</a></div>
                 </div><span class="product-badge product-badge-sale">Sale</span>
               </article>
             </div>
@@ -664,7 +664,7 @@ $conn->close();
               <div class="col-md-6"><span>514 S. Magnolia St. Orlando, FL 32806</span></div>
               <div class="col-md-auto">
                 <!-- Rights-->
-                <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span></span><span>.&nbsp;</span><span>All Rights Reserved.</span></p>
+                <p class="rights"><span>&copy;&nbsp;</span><span class="copright-year"></span><span></span><span>.&nbsp;</span><span>All Rights Reserved.</span></p>
               </div>
             </div>
           </div>
