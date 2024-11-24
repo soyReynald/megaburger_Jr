@@ -587,14 +587,9 @@ $conn->close();
           <div class="container">
             <div class="row row-50">
               <div class="col-md-6 col-lg-4">
-                <h5 class="footer-modern-title oh-desktop"><span class="d-inline-block wow slideInLeft">What We Offer</span></h5>
+                <h5 class="footer-modern-title oh-desktop"><span class="d-inline-block wow slideInLeft">Administration</span></h5>
                 <ul class="footer-modern-list d-inline-block d-sm-block wow fadeInUp">
-                  <li><a href="#">Pizzas</a></li>
-                  <li><a href="#">Burgers</a></li>
-                  <li><a href="#">Salads</a></li>
-                  <li><a href="#">Drinks</a></li>
-                  <li><a href="#">Seafood</a></li>
-                  <li><a href="#">Drinks</a></li>
+                  <li><a href="">Special Login</a></li>
                 </ul>
               </div>
               <div class="col-md-6 col-lg-4 col-xl-3">
