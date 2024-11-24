@@ -50,12 +50,17 @@
 <body class="form-v10">
 	<div class="page-content">
 		<div class="form-v10-content">
-			<form class="form-detail admin-login" action="includes/restricted/processAdminForm.php" method="post" id="myform">
-				<div class="form-left">
+			<form class="form-detail admin-login" action="../includes/restricted/processAdminForm.php" method="post" id="myform">
+				<div class="form-left" id="form_login">
+					<?php 
+					if($_GET["loggedin"] != true){
+						
+						
+					?>
 					<h2>Admin Login</h2>
 					<div class="form-group">
 						<div class="form-row form-row-1">
-							<input type="text" name="first_name" id="first_name" class="input-text" placeholder="First Name" required="">
+							<input type="text" name="user" id="user" class="input-text" placeholder="Admin user" required="">
 						</div>
 					</div>
 					<div class="form-row form-row-custom">
@@ -64,25 +69,70 @@
                     <div class="form-row-last">
 						<input type="submit" name="login" class="login" value="Login">
 					</div>
+					
+					<?php
+					} else {
+
+					?>
+					
+					<div class="form-row-last">
+						<?php 
+							if($_GET['user'] != 'undefined')
+							{
+								echo "<h2> Welcome Admin.:".$_GET['user']."</h2>";
+							}
+
+						?>
+					</div>
+				
+					<?php
+					}
+					?>
+				
 				</div>
-				<div class="form-right d-none">
-					<h2>Contact Details</h2>
+				<div class="form-right d-none" id="form_registry">
+					
+				</div>
+			</form>
+		</div>
+	</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="text/javascript" async="" src="./form_colorlib_files/analytics.js.descarga"></script><script async="" src="./form_colorlib_files/js"></script>
+<script>
+  if (document.querySelector("#form_registry").classList[1] !== null && document.querySelector("#form_registry").classList[1] !== "")
+  {
+    document.querySelector("#form_registry").innerHTML = "";
+  }
+  if (document.location.href.includes("loggedin=true")) {
+	document.querySelector("#form_registry").classList.remove("d-none");
+    document.querySelector("#form_registry").innerHTML = `
+                <h2>Registry an employee</h2>
 					<div class="form-row">
-						<input type="text" name="street" class="street" id="street" placeholder="Street + Nr" required="">
+						<input type="text" name="Full Name" class="name" id="name" placeholder="Name" required="true">
 					</div>
 					<div class="form-row">
-						<input type="text" name="additional" class="additional" id="additional" placeholder="Additional Information" required="">
+						<input type="text" name="username" class="username" id="username" placeholder="Username" required="true">
+					</div>
+					<div class="form-row">
+						<input type="password" name="password" class="password" id="password" placeholder="Password" Information" required="true">
 					</div>
 					<div class="form-group">
-						<div class="form-row form-row-1">
-							<input type="text" name="zip" class="zip" id="zip" placeholder="Zip Code" required="">
-						</div>
-						<div class="form-row form-row-2">
-							<select name="place">
-							    <option value="place">Place</option>
-							    <option value="Street">Street</option>
-							    <option value="District">District</option>
-							    <option value="City">City</option>
+						<div class="form-row">
+							<select name="customer_no">
+							    <option value="no1">Customer no1</option>
+							    <option value="no2">Customer no2</option>
+							    <option value="no3">Customer no3</option>
+							    <option value="no4">Customer no4</option>
+							    <option value="no5">Customer no5</option>
+							    <option value="no6">Customer no6</option>
+							    <option value="no7">Customer no7</option>
+							    <option value="no8">Customer no8</option>
+							    <option value="no9">Customer no9</option>
+							    <option value="no10">Customer no10</option>
+							    <option value="no11">Customer no11</option>
+							    <option value="no12">Customer no12</option>
+							    <option value="no13">Customer no13</option>
+
 							</select>
 							<span class="select-btn">
 							  	<i class="zmdi zmdi-chevron-down"></i>
@@ -90,26 +140,7 @@
 						</div>
 					</div>
 					<div class="form-row">
-						<select name="country">
-						    <option value="country">Country</option>
-						    <option value="Vietnam">Vietnam</option>
-						    <option value="Malaysia">Malaysia</option>
-						    <option value="India">India</option>
-						</select>
-						<span class="select-btn">
-						  	<i class="zmdi zmdi-chevron-down"></i>
-						</span>
-					</div>
-					<div class="form-group">
-						<div class="form-row form-row-1">
-							<input type="text" name="code" class="code" id="code" placeholder="Code +" required="">
-						</div>
-						<div class="form-row form-row-2">
-							<input type="text" name="phone" class="phone" id="phone" placeholder="Phone Number" required="">
-						</div>
-					</div>
-					<div class="form-row">
-						<input type="text" name="your_email" id="your_email" class="input-text" required="" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="Your Email">
+						<input type="text" name="your_email" id="your_email" class="input-text" required="" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="Employee Email">
 					</div>
 					<div class="form-checkbox">
 						<label class="container"><p>I do accept the <a href="https://colorlib.com/etc/regform/colorlib-regform-36/#" class="text">Terms and Conditions</a> of your site.</p>
@@ -120,13 +151,9 @@
 					<div class="form-row-last">
 						<input type="submit" name="register" class="register" value="Register Badge">
 					</div>
-				</div>
-			</form>
-		</div>
-	</div>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script type="text/javascript" async="" src="./form_colorlib_files/analytics.js.descarga"></script><script async="" src="./form_colorlib_files/js"></script>
-<script>
+    `;
+  }
+
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
