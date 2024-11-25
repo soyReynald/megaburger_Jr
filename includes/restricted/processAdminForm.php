@@ -43,9 +43,10 @@ if(isset($_POST['name']) && isset($_POST['your_email']) && isset($_POST['passwor
   $name = $_POST['name'];
   $your_email = $_POST['your_email'];
   $password = $_POST['password_employee'];
+  $hashed_password = password_hash($password, PASSWORD_DEFAULT);
   $customer_no = $_POST['customer_no'];
 
-  $sql = "INSERT INTO employee (name, employee_email, password, actual_customer_id) VALUES ('{$name}', '{$your_email}', '{$password}', '{$customer_no}')";
+  $sql = "INSERT INTO employee (name, employee_email, password, actual_customer_id) VALUES ('{$name}', '{$your_email}', '{$hashed_password}', '{$customer_no}')";
 
   if ($conn->query($sql) === TRUE) {
     header("Location: ../../login/index.php?loggedin=true&user=".$_POST['user']);

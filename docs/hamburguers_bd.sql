@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-11-2024 a las 18:55:41
+-- Tiempo de generación: 25-11-2024 a las 19:45:55
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -40,7 +40,8 @@ CREATE TABLE `customers` (
 
 INSERT INTO `customers` (`id`, `name`, `location`, `phone_number`) VALUES
 (1, 'Franklin', 'Aquino', 'johnfranklinaquino@example.com'),
-(2, 'Abdiel', 'China', '8292993195');
+(2, 'Abdiel', 'China', '8292993195'),
+(3, 'Elizabeth', 'El Seibo', '8293307549');
 
 -- --------------------------------------------------------
 
@@ -51,19 +52,13 @@ INSERT INTO `customers` (`id`, `name`, `location`, `phone_number`) VALUES
 CREATE TABLE `employee` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `id_of_customers_who_attends` int(11) NOT NULL,
-  `total_of_customers` double NOT NULL,
-  `actual_customer_id` int(11) NOT NULL,
-  `menu_items_no_chose_by_customer` varchar(200) NOT NULL
+  `employee_email` varchar(40) NOT NULL,
+  `password` text NOT NULL,
+  `id_of_customers_who_attends` int(11) DEFAULT NULL,
+  `total_of_customers` double DEFAULT NULL,
+  `actual_customer_id` int(11) DEFAULT NULL,
+  `menu_items_no_chose_by_customer` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `employee`
---
-
-INSERT INTO `employee` (`id`, `name`, `id_of_customers_who_attends`, `total_of_customers`, `actual_customer_id`, `menu_items_no_chose_by_customer`) VALUES
-(1, 'Francisco', 1, 1, 1, '1-hamburguer with cheese'),
-(3, 'Francisco', 2, 2, 3, '1 hamburguer of cow meat');
 
 -- --------------------------------------------------------
 
@@ -105,6 +100,13 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`id`, `admin`, `password`) VALUES
+(1, 'admin', '*09C80370F212ABA21869DC2C0550943979F2986B');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -143,13 +145,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `to_about`
@@ -161,7 +163,7 @@ ALTER TABLE `to_about`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
