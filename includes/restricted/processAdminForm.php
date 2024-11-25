@@ -49,13 +49,14 @@ if(isset($_POST['name']) && isset($_POST['your_email']) && isset($_POST['passwor
   $sql = "INSERT INTO employee (name, employee_email, password, actual_customer_id) VALUES ('{$name}', '{$your_email}', '{$hashed_password}', '{$customer_no}')";
 
   if ($conn->query($sql) === TRUE) {
-    header("Location: ../../login/index.php?loggedin=true&user=".$_POST['user']);
+    header("Location: ../../menu/index.php?loggedin=true&employee=".$name);
+    $_SESSION['employee_name'] = $name;
     $_SESSION['customer_no'] = $customer_no;
   } else if ($conn->query($sql) != TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
   else {
-    header("Location: ../../login/index.php?loggedin=false");
+    header("Location: ../../menu/index.php?loggedin=false");
   }
 
 }
