@@ -53,8 +53,7 @@
 			<form class="form-detail admin-login" action="../includes/restricted/processAdminForm.php" method="post" id="myform">
 				<div class="form-left" id="form_login">
 					<?php 
-					if($_GET["loggedin"] != true){
-						
+					if(!isset($_GET["loggedin"])){
 						
 					?>
 					<h2>Admin Login</h2>

@@ -17,9 +17,9 @@ $password = $secret_pass;
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);;
 
 if (password_verify($password, $hashed_password)) {
-    header("Location: ../../login/index.php?loggedin=true");
+    header("Location: ../../login/index.php?loggedin=true&user=".$_POST['user']);
 } else {
-  header("Location: ../../login/index.php?loggedin=false&user=".$_POST['user']);
+  header("Location: ../../login/index.php?loggedin=false");
 }
 
 ?>
