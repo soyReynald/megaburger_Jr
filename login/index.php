@@ -1,8 +1,9 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <!-- saved from url=(0053)https://colorlib.com/etc/regform/colorlib-regform-36/ -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	
-	<title>Form-v10 by Colorlib</title>
+	<title>Megaburguer</title>
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<!-- Font-->
@@ -53,8 +54,8 @@
 			<form class="form-detail admin-login" action="../includes/restricted/processAdminForm.php" method="post" id="myform">
 				<div class="form-left" id="form_login">
 					<?php 
-					if(!isset($_GET["loggedin"])){
-						
+					if(!isset($_GET["loggedin"])) 
+					{
 					?>
 					<h2>Admin Login</h2>
 					<div class="form-group">
@@ -78,7 +79,7 @@
 						<?php 
 							if($_GET['user'] != 'undefined')
 							{
-								echo "<h2> Welcome Admin.:".$_GET['user']."</h2>";
+								echo "<h2> Welcome Admin.:".@$_SESSION['admin']."</h2>";
 							}
 
 						?>
@@ -107,39 +108,36 @@
     document.querySelector("#form_registry").innerHTML = `
                 <h2>Registry an employee</h2>
 					<div class="form-row">
-						<input type="text" name="Full Name" class="name" id="name" placeholder="Name" required="true">
+						<input type="text" name="name" class="name" id="name" placeholder="Name" required="true">
 					</div>
 					<div class="form-row">
-						<input type="text" name="username" class="username" id="username" placeholder="Username" required="true">
+						<input type="text" name="your_email" id="your_email" class="input-text" required="" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="Employee Email">
 					</div>
 					<div class="form-row">
-						<input type="password" name="password" class="password" id="password" placeholder="Password" Information" required="true">
+						<input type="password" name="password_employee" class="password" id="password" placeholder="Password" Information" required="true">
 					</div>
 					<div class="form-group">
 						<div class="form-row">
-							<select name="customer_no">
-							    <option value="no1">Customer no1</option>
-							    <option value="no2">Customer no2</option>
-							    <option value="no3">Customer no3</option>
-							    <option value="no4">Customer no4</option>
-							    <option value="no5">Customer no5</option>
-							    <option value="no6">Customer no6</option>
-							    <option value="no7">Customer no7</option>
-							    <option value="no8">Customer no8</option>
-							    <option value="no9">Customer no9</option>
-							    <option value="no10">Customer no10</option>
-							    <option value="no11">Customer no11</option>
-							    <option value="no12">Customer no12</option>
-							    <option value="no13">Customer no13</option>
+							<select name="customer_no"> <!-- In the db: actual_customer_id -->
+							    <option value="1">Customer no1</option>
+							    <option value="2">Customer no2</option>
+							    <option value="3">Customer no3</option>
+							    <option value="4">Customer no4</option>
+							    <option value="5">Customer no5</option>
+							    <option value="6">Customer no6</option>
+							    <option value="7">Customer no7</option>
+							    <option value="8">Customer no8</option>
+							    <option value="9">Customer no9</option>
+							    <option value="10">Customer no10</option>
+							    <option value="11">Customer no11</option>
+							    <option value="12">Customer no12</option>
+							    <option value="13">Customer no13</option>
 
 							</select>
 							<span class="select-btn">
 							  	<i class="zmdi zmdi-chevron-down"></i>
 							</span>
 						</div>
-					</div>
-					<div class="form-row">
-						<input type="text" name="your_email" id="your_email" class="input-text" required="" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="Employee Email">
 					</div>
 					<div class="form-checkbox">
 						<label class="container"><p>I do accept the <a href="https://colorlib.com/etc/regform/colorlib-regform-36/#" class="text">Terms and Conditions</a> of your site.</p>
@@ -148,7 +146,7 @@
 						</label>
 					</div>
 					<div class="form-row-last">
-						<input type="submit" name="register" class="register" value="Register Badge">
+						<input type="submit" name="register" class="register" value="Register Employee">
 					</div>
     `;
   }
