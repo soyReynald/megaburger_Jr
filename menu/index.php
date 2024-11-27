@@ -33,9 +33,8 @@ $_SESSION['employee_name'];
 
 	</head>
 	<body>
-	<buton type="button" onclick="logout()" class="logout">Logout</button>
 	<section class="ftco-section">
-		
+	<button type="button" onclick="logout()" class="logout">Logout</button>
 		<div class="container">	
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
@@ -86,19 +85,29 @@ $_SESSION['employee_name'];
 
 	<script type="text/javascript">
 		async function logout() {
-			const logout = {
-				"value": "off"
-			}
-
-			let params = {
-				"method": "POST",
-				"headers": {
-					"Content-Type": "application/json; charset=utf-8"
-				},
-				"body": JSON.stringify(logout)
+			/// TO re-fine.
+			async function json_as_post_data() {
+				let data = {
+					"value": "log_off",
+				}
+				return fetch('../includes/restricted/processAdminForm.php', {
+					method: 'POST',
+					body: JSON.stringify(data)
+				}).then(response => {
+					return response.text();
+				});
 			}
 			
-			await fetch("../includes/processAdminForm.php", params);
+			
+			
+			if(await json_as_post_data())
+			{
+				const valueToLog_Out = JSON.parse(await json_as_post_data());
+
+				if (valueToLog_Out.value == "go") { 
+					window.location.replace("../login/index.php");
+				}
+			};
 		}
 	</script>
 	<script src="js/jquery.min.js"></script>

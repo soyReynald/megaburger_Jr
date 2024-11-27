@@ -231,8 +231,6 @@
 function turnLoginOn() {
 	// Get the checkbox
 	var checkBox = document.getElementById("turnOnLogin-Checkbox");
-	// Get the output text
-	var text = document.getElementById("text");
 
 	// If the checkbox is checked, display the output text
 	if (checkBox.checked == true)
@@ -241,7 +239,7 @@ function turnLoginOn() {
 		document.querySelector("#name-row").style.display = "none";
 		document.querySelector("#title-to-registry-of-employee").innerHTML = "Login the Employee";
 		document.querySelector("#name").setAttribute("required", "false");
-		document.querySelector("#name").noValidate;
+		document.querySelector("#name").setAttribute("type", "hidden");
 		// Button to login
 		const btn_for_login = document.createElement("input");
 		btn_for_login.setAttribute("type", "submit");
@@ -258,6 +256,7 @@ function turnLoginOn() {
 	{
 		document.querySelector("#terms-and-rights").style.display = "block";
 		document.querySelector("#name-row").style.display = "block";
+		document.querySelector("#name").setAttribute("type", "text");
 		document.querySelector("#title-to-registry-of-employee").innerHTML = "Registry an employee";
 
 		// If not set, remove current and re-create

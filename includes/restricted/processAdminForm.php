@@ -38,8 +38,9 @@ if(isset($password)){
   }
 }
 
-if(isset($_POST['name']) && isset($_POST['your_email']) && isset($_POST['password_employee']) && isset($_POST['customer_no'])) 
+if(isset($_POST['name']) && isset($_POST['your_email']) && isset($_POST['password_employee']) && isset($_POST['customer_no']) && !isset($_POST['login_employee'])) 
 {
+  echo "h";
   $name = $_POST['name'];
   $your_email = $_POST['your_email'];
   $password = $_POST['password_employee'];
@@ -59,7 +60,7 @@ if(isset($_POST['name']) && isset($_POST['your_email']) && isset($_POST['passwor
     header("Location: ../../menu/index.php?loggedin=false");
   }
 }
-
+// ONLY here
 if (isset($_POST['login_employee'])) 
 {
   $secret_pass = @$_POST['password'];
@@ -72,24 +73,34 @@ if (isset($_POST['login_employee']))
   $result = $conn->query($sql);
   
   if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-      $password = $row['password'];
-      $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-      $_SESSION['employee_name'] = $row['name'];
-      $_SESSION['customer_no'] = $customer_no;
-      header("Location: ../../menu/index.php?loggedin=true&employee=".$name);
-    }
-    if (password_verify($password, $hashed_password)) {
-      header("Location: ../../login/index.php?loggedin=true&user=".$_POST['user']);
+      // output data of each row
+        while($row = $result->fetch_assoc()) {
+          $password = $row['password'];
+          $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+          if (password_verify($password, $hashed_password)) {
+            $_SESSION['employee_name'] = $row['name'];
+            $_SESSION['customer_no'] = $customer_no;
+            header("Location: ../../menu/index.php?loggedin=true&employee=".$name);
+          } else {
+            header("Location: ../../login/index.php?loggedin=false");
+          }
+        }
     } else {
-      header("Location: ../../login/index.php?loggedin=false");
-    }
-  } else {
     echo "0 results";
   }
-
 }
 
+if (!isset($_POST['login_employee'])) {
+  $_POST = json_decode(file_get_contents('php://input'), true);
+  if (isset($_POST['value']) && $_POST['value'] == "log_off") {
+    if (isset($_SESSION['employee_name'])){
+      session_destroy();
+    }
+    $todo = [
+      "value"=> 'go'
+    ];
+    echo json_encode($todo);
+  }  
+}
 
 ?>
