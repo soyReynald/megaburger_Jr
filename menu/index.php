@@ -21,7 +21,7 @@ $_SESSION['employee_name'];
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Table 03</title>
+  	<title>Menu to employees</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -33,8 +33,10 @@ $_SESSION['employee_name'];
 
 	</head>
 	<body>
+	<buton type="button" onclick="logout()" class="logout">Logout</button>
 	<section class="ftco-section">
-		<div class="container">
+		
+		<div class="container">	
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
 					<h2 class="heading-section">Welcome <?php @$_SESSION['employee_name']; ?></h2>
@@ -82,10 +84,27 @@ $_SESSION['employee_name'];
 		</div>
 	</section>
 
+	<script type="text/javascript">
+		async function logout() {
+			const logout = {
+				"value": "off"
+			}
+
+			let params = {
+				"method": "POST",
+				"headers": {
+					"Content-Type": "application/json; charset=utf-8"
+				},
+				"body": JSON.stringify(logout)
+			}
+			
+			await fetch("../includes/processAdminForm.php", params);
+		}
+	</script>
 	<script src="js/jquery.min.js"></script>
-  <script src="js/popper.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/main.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
 
 	</body>
 </html>

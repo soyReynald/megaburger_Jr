@@ -240,12 +240,15 @@ function turnLoginOn() {
 		document.querySelector("#terms-and-rights").style.display = "none";
 		document.querySelector("#name-row").style.display = "none";
 		document.querySelector("#title-to-registry-of-employee").innerHTML = "Login the Employee";
+		document.querySelector("#name").setAttribute("required", "false");
+		document.querySelector("#name").noValidate;
 		// Button to login
 		const btn_for_login = document.createElement("input");
 		btn_for_login.setAttribute("type", "submit");
 		btn_for_login.setAttribute("name", "login_employee");
 		btn_for_login.setAttribute("value", "Login");
 		btn_for_login.setAttribute("class", "login");
+		
 
 		document.querySelector(".register").remove();
 
