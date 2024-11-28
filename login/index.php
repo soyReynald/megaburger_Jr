@@ -122,6 +122,15 @@
 		font-weight: bold;
 		margin-bottom: 5px;
   	}
+	button.logout{
+		background: red;
+		color: white;
+		border: none;
+		border-radius: 5px;
+		padding: 7px;
+		margin: 23px;
+		cursor: pointer;
+	}
     </style>
 	<meta name="robots" content="noindex, follow">
 </head>
@@ -146,13 +155,22 @@
 						<div class="form-row-last">
 							<input type="submit" name="login" class="login" value="Login">
 						</div>
-					
+						<?php
+						if(isset($_GET["user_duplicated"]) && $_GET["user_duplicated"] == "true"){ ?>
+							<div class="notice danger">
+								<div class="notice-title">DANGER</div>
+								<p>The user which you tried to create, is already created.</p>
+							</div>
+						<?php
+						}
+						?>
 					<?php
 					} else {
 
 					?>
 					
 					<div class="form-row-last">
+						<button type="button" onclick="logout()" class="logout">Logout</button>
 						<?php 
 							if($_GET['user'] != 'undefined')
 							{
@@ -168,10 +186,7 @@
 
 						?>
 					</div>
-					<div class="notice danger">
-						<div class="notice-title">DANGER</div>
-						<p>The user which you tried to create, is already created.</p>
-					</div>
+					
 
 					<?php
 					}
@@ -299,5 +314,5 @@ gtag('config', 'UA-23581568-13');
 
 </script>
 <script defer="" src="./form_colorlib_files/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;8e7b65e8ee1d1375&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2024.10.5&quot;,&quot;token&quot;:&quot;cd0b4b3a733644fc843ef0b185f98241&quot;}" crossorigin="anonymous"></script>
-
+<script src="../menu/js/main.js"></script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) --></html>
