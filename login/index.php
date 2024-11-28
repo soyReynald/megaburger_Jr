@@ -112,8 +112,18 @@
 	.switch-title{
 		width: 100px;
 	}
+	/* Warnings */
+	.notice.danger {
+		background-color: #f8d7da;
+    	border: 1px solid #f5c6cb;
+		padding: 2%;
+	}
+	.notice-title {
+		font-weight: bold;
+		margin-bottom: 5px;
+  	}
     </style>
-<meta name="robots" content="noindex, follow">
+	<meta name="robots" content="noindex, follow">
 </head>
 <body class="form-v10">
 	<div class="page-content">
@@ -121,21 +131,21 @@
 			<form class="form-detail admin-login" action="../includes/restricted/processAdminForm.php" method="post" id="myform">
 				<div class="form-left" id="form_login">
 					<?php 
-					if(!isset($_GET["loggedin"])) 
+					if(!isset($_GET["loggedin"]) || $_GET["loggedin"] == "false") 
 					{
 					?>
-					<h2>Admin Login</h2>
-					<div class="form-group">
-						<div class="form-row form-row-1">
-							<input type="text" name="user" id="user" class="input-text" placeholder="Admin user" required="">
+						<h2>Admin Login</h2>
+						<div class="form-group">
+							<div class="form-row form-row-1">
+								<input type="text" name="user" id="user" class="input-text" placeholder="Admin user" required="">
+							</div>
 						</div>
-					</div>
-					<div class="form-row form-row-custom">
-						<input type="password" placeholder="Password" name="password" class="password" id="password" required="true">
-					</div>
-                    <div class="form-row-last">
-						<input type="submit" name="login" class="login" value="Login">
-					</div>
+						<div class="form-row form-row-custom">
+							<input type="password" placeholder="Password" name="password" class="password" id="password" required="true">
+						</div>
+						<div class="form-row-last">
+							<input type="submit" name="login" class="login" value="Login">
+						</div>
 					
 					<?php
 					} else {
@@ -158,11 +168,16 @@
 
 						?>
 					</div>
-				
+					<div class="notice danger">
+						<div class="notice-title">DANGER</div>
+						<p>The user which you tried to create, is already created.</p>
+					</div>
+
 					<?php
 					}
 					?>
-				
+					
+					
 				</div>
 				<div class="form-right d-none" id="form_registry">
 					
@@ -171,6 +186,12 @@
 		</div>
 	</div>
 <!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="text/javascript">
+	let itemToHide = document.querySelector(".notice.danger");
+	setTimeout(() => {
+		itemToHide.style.display = "none";
+	}, 4000);
+</script>
 <script type="text/javascript" async="" src="./form_colorlib_files/analytics.js.descarga"></script><script async="" src="./form_colorlib_files/js"></script>
 <script>
   if (document.querySelector("#form_registry").classList[1] !== null && document.querySelector("#form_registry").classList[1] !== "")
@@ -275,6 +296,7 @@ function turnLoginOn() {
 gtag('js', new Date());
 
 gtag('config', 'UA-23581568-13');
+
 </script>
 <script defer="" src="./form_colorlib_files/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;8e7b65e8ee1d1375&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2024.10.5&quot;,&quot;token&quot;:&quot;cd0b4b3a733644fc843ef0b185f98241&quot;}" crossorigin="anonymous"></script>
 
