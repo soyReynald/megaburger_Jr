@@ -1,14 +1,6 @@
-      <!--
-      I will need to test all these changes.
 
-      Thank you for WATCHING.
-
-      And PLEASE: 
-      Be positive IN NAME OF Elohim. Amen.
-
-    -->
-      <!-- Page Footer-->
-      <footer class="section footer-modern context-dark footer-modern-2">
+    <!-- Page Footer-->
+    <footer class="section footer-modern context-dark footer-modern-2">
         <div class="footer-modern-line">
           <div class="container">
             <div class="row row-50">
@@ -26,12 +18,12 @@
               <div class="col-md-6 col-lg-4 col-xl-3">
                 <h5 class="footer-modern-title oh-desktop"><span class="d-inline-block wow slideInLeft">Information</span></h5>
                 <ul class="footer-modern-list d-inline-block d-sm-block wow fadeInUp">
-                  <li><a href="about-us.php">About us</a></li>
+                  <li><a href="about-us.html">About us</a></li>
                   <li><a href="#">Latest News</a></li>
                   <li><a href="#">Our Menu</a></li>
                   <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Shop</a></li>
-                  <li><a href="contacts.php">Contact Us</a></li>
+                  <li><a href="#">Shop</a></li>
+                  <li><a href="contacts.html">Contact Us</a></li>
                 </ul>
               </div>
               <div class="col-lg-4 col-xl-5">
@@ -56,7 +48,7 @@
             <div class="row row-30 align-items-center">
               <div class="col-sm-6 col-md-7 col-lg-4 col-xl-4">
                 <div class="row row-30 align-items-center text-lg-center">
-                  <div class="col-md-7 col-xl-6"><a class="brand" href="index.php"><img src="images/logo-inverse-198x66.png" alt="" width="198" height="66"/></a></div>
+                  <div class="col-md-7 col-xl-6"><a class="brand" href="index.html"><img src="images/logo-inverse-198x66.png" alt="" width="198" height="66"/></a></div>
                   <div class="col-md-5 col-xl-6">
                     <div class="iso-1"><span><img src="images/like-icon-58x25.png" alt="" width="58" height="25"/></span><span class="iso-1-big">9.4k</span></div>
                   </div>
@@ -92,7 +84,7 @@
         <div class="footer-modern-line-3">
           <div class="container">
             <div class="row row-10 justify-content-between">
-              <div class="col-md-6"><span>514 S. Magnolia St. Orlando, FL 32806</span></div>
+              <div class="col-md-6"><span>Respaldo 27, S.P.M Dominican Republic</span></div>
               <div class="col-md-auto">
                 <!-- Rights-->
                 <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span></span><span>.&nbsp;</span><span>All Rights Reserved.</span></p>
@@ -105,9 +97,6 @@
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>
     <!-- Javascript-->
-    <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
     <!-- coded by Himic-->
-  </body>
-</html>

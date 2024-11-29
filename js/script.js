@@ -435,7 +435,7 @@
 			if (captchaToken.length === 0) {
 				captcha
 						.siblings('.form-validation')
-						.php('Please, prove that you are not robot.')
+						.html('Please, prove that you are not robot.')
 						.addClass('active');
 				captcha
 						.closest('.form-wrap')
@@ -452,7 +452,7 @@
 						$this
 								.siblings('.form-validation')
 								.removeClass('active')
-								.php('');
+								.html('');
 						$this.off('propertychange');
 					}
 				});
@@ -1005,7 +1005,7 @@
 										.done(function (responceCode) {
 											if (responceCode !== 'CPT000') {
 												if (output.hasClass("snackbars")) {
-													output.php('<p><span class="icon text-middle mdi mdi-check icon-xxs"></span><span>' + captchaMsg[responceCode] + '</span></p>')
+													output.html('<p><span class="icon text-middle mdi mdi-check icon-xxs"></span><span>' + captchaMsg[responceCode] + '</span></p>')
 
 													setTimeout(function () {
 														output.removeClass("active");
@@ -1013,7 +1013,7 @@
 
 													captchaFlag = false;
 												} else {
-													output.php(captchaMsg[responceCode]);
+													output.html(captchaMsg[responceCode]);
 												}
 
 												output.addClass("active");
@@ -1028,7 +1028,7 @@
 							form.addClass('form-in-process');
 
 							if (output.hasClass("snackbars")) {
-								output.php('<p><span class="icon text-middle fa fa-circle-o-notch fa-spin icon-xxs"></span><span>Sending</span></p>');
+								output.html('<p><span class="icon text-middle fa fa-circle-o-notch fa-spin icon-xxs"></span><span>Sending</span></p>');
 								output.addClass("active");
 							}
 						} else {
@@ -1070,13 +1070,13 @@
 
 						if (result === "MF000") {
 							if (output.hasClass("snackbars")) {
-								output.php('<p><span class="icon text-middle mdi mdi-check icon-xxs"></span><span>' + msg[result] + '</span></p>');
+								output.html('<p><span class="icon text-middle mdi mdi-check icon-xxs"></span><span>' + msg[result] + '</span></p>');
 							} else {
 								output.addClass("active success");
 							}
 						} else {
 							if (output.hasClass("snackbars")) {
-								output.php(' <p class="snackbars-left"><span class="icon icon-xxs mdi mdi-alert-outline text-middle"></span><span>' + msg[result] + '</span></p>');
+								output.html(' <p class="snackbars-left"><span class="icon icon-xxs mdi mdi-alert-outline text-middle"></span><span>' + msg[result] + '</span></p>');
 							} else {
 								output.addClass("active error");
 							}
@@ -1162,16 +1162,16 @@
 			initWinonaButtons(plugins.buttonWinona);
 		}
 
-		function initWinonaButtons(buttons) {
-			for (var i = 0; i < buttons.length; i++) {
-				var $button = $(buttons[i]),
-						innerContent = $button.php();
+		// function initWinonaButtons(buttons) {
+		// 	for (var i = 0; i < buttons.length; i++) {
+		// 		var $button = $(buttons[i]),
+		// 				innerContent = $button.html();
 
-				$button.php('');
-				$button.append('<div class="content-original">' + innerContent + '</div>');
-				$button.append('<div class="content-dubbed">' + innerContent + '</div>');
-			}
-		}
+		// 		$button.html('');
+		// 		$button.append('<div class="content-original">' + innerContent + '</div>');
+		// 		$button.append('<div class="content-dubbed">' + innerContent + '</div>');
+		// 	}
+		// }
 
 		// Select2
 		if (plugins.selectFilter.length) {

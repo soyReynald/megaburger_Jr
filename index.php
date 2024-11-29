@@ -1,49 +1,50 @@
 <?php include_once("includes/restricted/header.php"); ?>
-      <!-- Swiper-->
-      <section class="section swiper-container swiper-slider swiper-slider-2 swiper-slider-3" data-loop="true" data-autoplay="5000" data-simulate-touch="false" data-slide-effect="fade">
-        <div class="swiper-wrapper text-sm-left">
-          <div class="swiper-slide context-dark" data-slide-bg="images/baconBurger.jpg">
-            <div class="swiper-slide-caption section-md">
-              <div class="container">
-                <div class="row">
-                  <div class="col-sm-9 col-md-8 col-lg-7 col-xl-7 offset-lg-1 offset-xxl-0">
-                    <h1 class="oh swiper-title"><span class="d-inline-block" data-caption-animate="slideInUp" data-caption-delay="0">Perfect Burgers</span></h1>
-                    <p class="big swiper-text" data-caption-animate="fadeInLeft" data-caption-delay="300">Experience the taste of a perfect Burger at MegaBurger, one of the best restaurants!</p><a class="button button-lg button-primary button-winona button-shadow-2" href="#" data-caption-animate="fadeInUp" data-caption-delay="300">View our menu</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide context-dark" data-slide-bg="images/ingredientesFrescos.jpg">
-            <div class="swiper-slide-caption section-md">
-              <div class="container">
-                <div class="row">
-                  <div class="col-sm-8 col-lg-7 offset-lg-1 offset-xxl-0">
-                    <h1 class="oh swiper-title"><span class="d-inline-block" data-caption-animate="slideInDown" data-caption-delay="0">Quality ingredients</span></h1>
-                    <p class="big swiper-text" data-caption-animate="fadeInRight" data-caption-delay="300">We use only the best ingredients to make one-of-a-kind burgers for our customers.</p>
-                    <div class="button-wrap oh"><a class="button button-lg button-primary button-winona button-shadow-2" href="#" data-caption-animate="slideInUp" data-caption-delay="0">View our menu</a></div>
-                  </div>
+ <!-- Swiper-->
+  <section class="section swiper-container swiper-slider swiper-slider-2 swiper-slider-3" data-loop="true" data-autoplay="5000" data-simulate-touch="false" data-slide-effect="fade">
+      <div class="swiper-wrapper text-sm-left">
+        <div class="swiper-slide context-dark" data-slide-bg="images/baconBurger.jpg">
+          <div class="swiper-slide-caption section-md">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-9 col-md-8 col-lg-7 col-xl-7 offset-lg-1 offset-xxl-0">
+                  <h1 class="oh swiper-title"><span class="d-inline-block" data-caption-animate="slideInUp" data-caption-delay="0">Perfect Burgers</span></h1>
+                  <p class="big swiper-text" data-caption-animate="fadeInLeft" data-caption-delay="300">Experience the taste of a perfect Burger at MegaBurger, one of the best restaurants!</p><a class="button button-lg button-primary button-winona button-shadow-2" href="#" data-caption-animate="fadeInUp" data-caption-delay="300">View our menu</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- Swiper Pagination-->
-        <div class="swiper-pagination" data-bullet-custom="true"></div>
-        <!-- Swiper Navigation-->
-        <div class="swiper-button-prev">
-          <div class="preview">
-            <div class="preview__img"></div>
-          </div>
-          <div class="swiper-button-arrow"></div>
-        </div>
-        <div class="swiper-button-next">
-          <div class="swiper-button-arrow"></div>
-          <div class="preview">
-            <div class="preview__img"></div>
+        <div class="swiper-slide context-dark" data-slide-bg="images/ingredientesFrescos.jpg">
+          <div class="swiper-slide-caption section-md">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-8 col-lg-7 offset-lg-1 offset-xxl-0">
+                  <h1 class="oh swiper-title"><span class="d-inline-block" data-caption-animate="slideInDown" data-caption-delay="0">Quality ingredients</span></h1>
+                  <p class="big swiper-text" data-caption-animate="fadeInRight" data-caption-delay="300">We use only the best ingredients to make one-of-a-kind burgers for our customers.</p>
+                  <div class="button-wrap oh"><a class="button button-lg button-primary button-winona button-shadow-2" href="#" data-caption-animate="slideInUp" data-caption-delay="0">View our menu</a></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+      <!-- Swiper Pagination-->
+      <div class="swiper-pagination" data-bullet-custom="true"></div>
+      <!-- Swiper Navigation-->
+      <div class="swiper-button-prev">
+        <div class="preview">
+          <div class="preview__img"></div>
+        </div>
+        <div class="swiper-button-arrow"></div>
+      </div>
+      <div class="swiper-button-next">
+        <div class="swiper-button-arrow"></div>
+        <div class="preview">
+          <div class="preview__img"></div>
+        </div>
+      </div>
+    </section>
+
       <!-- What We Offer-->
       <section class="section section-md bg-default">
         <div class="container">
