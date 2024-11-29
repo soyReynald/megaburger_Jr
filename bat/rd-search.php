@@ -151,7 +151,7 @@ if ($file_count > 0) {
       if (isset($_GET['liveSearch']) and $_GET['liveSearch'] != "" and $match_count != 0) {
         ?>
         <li class="search-list-item-all">
-          <a href='search-results.html?s=<?php echo $_GET['s']; ?>&amp;filter=<?php echo $search_filter_init; ?>'  class="search-submit">
+          <a href='search-results.php?s=<?php echo $_GET['s']; ?>&amp;filter=<?php echo $search_filter_init; ?>'  class="search-submit">
             <?php
             echo "See other ";
             echo $sum_of_results;

@@ -12,13 +12,15 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$secret_pass = @$_POST['password'];
+if (isset($_POST)) {
+  $secret_pass = @$_POST['password'];
 
-$password = $secret_pass;
-
-$sql = "SELECT admin, password FROM users";
-
-$result = $conn->query($sql);
+  $password = $secret_pass;
+  
+  $sql = "SELECT admin, password FROM users";
+  
+  $result = $conn->query($sql);
+}
 
 if(isset($password)){
   if ($result->num_rows > 0) {

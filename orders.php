@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
   <head>
-    <title>Menu</title>
+    <title>Orders</title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,7 +52,6 @@
       </div>
     </div>
     <div class="page">
-      <!-- Top Banner-->
       <!-- Page Header-->
       <header class="section page-header">
         <!-- RD Navbar-->
@@ -65,7 +64,7 @@
                   <!-- RD Navbar Toggle-->
                   <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                   <!-- RD Navbar Brand-->
-                  <div class="rd-navbar-brand"><a class="brand" href="index.html"><img class="brand-logo-dark" src="images/logo-198x66.png" alt="" width="99" height="33"/></a></div>
+                  <div class="rd-navbar-brand"><a class="brand" href="index.php"><img class="brand-logo-dark" src="images/logo-198x66.png" alt="" width="99" height="33"/></a></div>
                 </div>
                 <div class="rd-navbar-right rd-navbar-nav-wrap">
                   <div class="rd-navbar-aside">
@@ -93,10 +92,10 @@
                   <div class="rd-navbar-main">
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Home</a></li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="orders.html">Orders</a></li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="menu.html">Menu</a></li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.html">About</a></li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="index.php">Home</a></li>
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="orders.php">Orders</a></li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="menu.php">Menu</a></li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.php">About</a></li>
                     </ul>
                   </div>
                 </div>
@@ -105,42 +104,85 @@
           </nav>
         </div>
       </header>
-      <!-- Swiper-->
-      
-      <!-- What We Offer-->
       <section class="section section-md bg-default">
         <div class="container">
-          <h3 class="oh-desktop"><span class="d-inline-block wow slideInDown">Simple Burger</span></h3>
+          <h3 class="oh-desktop"><span class="d-inline-block wow slideInDown">Orders</span></h3>
           <div class="row row-md row-30">
             <div class="col-sm-6 col-lg-4">
               <div class="oh-desktop">
                 <!-- Services Terri-->
-                <article>
-                  <div><img src="images/SimpleBuger.jpg" alt="" width="370" height="278"/></div>
+                <article class="services-terri wow slideInUp">
+                  <div class="services-terri-figure"><img src="images/menu-1-370x278.jpg" alt="" width="370" height="278"/>
+                  </div>
+                  <div class="services-terri-caption"><span class="services-terri-icon linearicons-leaf"></span>
+                    <h5 class="services-terri-title"><a href="#">Salads</a></h5>
+                  </div>
                 </article>
               </div>
             </div>
-            <div class="col-sm-6 col-lg-6">
-                <div class="oh-desktop">
-                  <!-- Services Terri-->
-                  <article style="padding-left: 20px;">
-                    <h6 style="text-align: start;">Descripcion</h6>
-                    <p style="text-align: start;">Nuestra hamburguesa clásica reinventada, con una jugosa carne de res, queso cheddar derretido, lechuga fresca, tomate maduro y nuestra especial salsa secreta. ¡Un clásico que nunca falla!</p>
-                    <h6 style="padding-top: 25px; text-align: start;">Ingredientes</h7>
-                      <!-- "text-decoration: none; font-weight: normal; " -->
-                    <ul style="padding-top: 20px; color: #777777; text-transform: capitalize; font-family: Roboto; font-weight: normal;">
-                      <li>Filetes de pollo empanizados</li>
-                      <li>Queso cheddar</li>
-                      <li>Pan de sésamo</li>
-                      <li>Lechuga</li>
-                    </ul>
-                  </article>
-                </div>
+            <div class="col-sm-6 col-lg-4">
+              <div class="oh-desktop">
+                <!-- Services Terri-->
+                <article class="services-terri wow slideInDown">
+                  <div class="services-terri-figure"><img src="images/menu-2-370x278.jpg" alt="" width="370" height="278"/>
+                  </div>
+                  <div class="services-terri-caption"><span class="services-terri-icon linearicons-pizza"></span>
+                    <h5 class="services-terri-title"><a href="#">Pizzas</a></h5>
+                  </div>
+                </article>
               </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+              <div class="oh-desktop">
+                <!-- Services Terri-->
+                <article class="services-terri wow slideInUp">
+                  <div class="services-terri-figure"><img src="images/menu-3-370x278.jpg" alt="" width="370" height="278"/>
+                  </div>
+                  <div class="services-terri-caption"><span class="services-terri-icon linearicons-hamburger"></span>
+                    <h5 class="services-terri-title"><a href="#">Burgers</a></h5>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+              <div class="oh-desktop">
+                <!-- Services Terri-->
+                <article class="services-terri wow slideInDown">
+                  <div class="services-terri-figure"><img src="images/menu-4-370x278.jpg" alt="" width="370" height="278"/>
+                  </div>
+                  <div class="services-terri-caption"><span class="services-terri-icon linearicons-ice-cream"></span>
+                    <h5 class="services-terri-title"><a href="#">Desserts</a></h5>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+              <div class="oh-desktop">
+                <!-- Services Terri-->
+                <article class="services-terri wow slideInUp">
+                  <div class="services-terri-figure"><img src="images/menu-5-370x278.jpg" alt="" width="370" height="278"/>
+                  </div>
+                  <div class="services-terri-caption"><span class="services-terri-icon linearicons-coffee-cup"></span>
+                    <h5 class="services-terri-title"><a href="#">Drinks</a></h5>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+              <div class="oh-desktop">
+                <!-- Services Terri-->
+                <article class="services-terri wow slideInDown">
+                  <div class="services-terri-figure"><img src="images/menu-6-370x278.jpg" alt="" width="370" height="278"/>
+                  </div>
+                  <div class="services-terri-caption"><span class="services-terri-icon linearicons-steak"></span>
+                    <h5 class="services-terri-title"><a href="#">Seafood</a></h5>
+                  </div>
+                </article>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-
       <!-- Page Footer-->
       <footer class="section footer-modern context-dark footer-modern-2">
         <div class="footer-modern-line">
@@ -160,12 +202,12 @@
               <div class="col-md-6 col-lg-4 col-xl-3">
                 <h5 class="footer-modern-title oh-desktop"><span class="d-inline-block wow slideInLeft">Information</span></h5>
                 <ul class="footer-modern-list d-inline-block d-sm-block wow fadeInUp">
-                  <li><a href="about-us.html">About us</a></li>
+                  <li><a href="about-us.php">About us</a></li>
                   <li><a href="#">Latest News</a></li>
                   <li><a href="#">Our Menu</a></li>
                   <li><a href="#">FAQ</a></li>
                   <li><a href="#">Shop</a></li>
-                  <li><a href="contacts.html">Contact Us</a></li>
+                  <li><a href="contacts.php">Contact Us</a></li>
                 </ul>
               </div>
               <div class="col-lg-4 col-xl-5">
@@ -190,7 +232,7 @@
             <div class="row row-30 align-items-center">
               <div class="col-sm-6 col-md-7 col-lg-4 col-xl-4">
                 <div class="row row-30 align-items-center text-lg-center">
-                  <div class="col-md-7 col-xl-6"><a class="brand" href="index.html"><img src="images/logo-inverse-198x66.png" alt="" width="198" height="66"/></a></div>
+                  <div class="col-md-7 col-xl-6"><a class="brand" href="index.php"><img src="images/logo-inverse-198x66.png" alt="" width="198" height="66"/></a></div>
                   <div class="col-md-5 col-xl-6">
                     <div class="iso-1"><span><img src="images/like-icon-58x25.png" alt="" width="58" height="25"/></span><span class="iso-1-big">9.4k</span></div>
                   </div>
@@ -239,6 +281,7 @@
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>
     <!-- Javascript-->
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
     <!-- coded by Himic-->

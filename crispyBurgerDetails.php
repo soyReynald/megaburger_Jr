@@ -65,7 +65,7 @@
                   <!-- RD Navbar Toggle-->
                   <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                   <!-- RD Navbar Brand-->
-                  <div class="rd-navbar-brand"><a class="brand" href="index.html"><img class="brand-logo-dark" src="images/logo-198x66.png" alt="" width="99" height="33"/></a></div>
+                  <div class="rd-navbar-brand"><a class="brand" href="index.php"><img class="brand-logo-dark" src="images/logo-198x66.png" alt="" width="99" height="33"/></a></div>
                 </div>
                 <div class="rd-navbar-right rd-navbar-nav-wrap">
                   <div class="rd-navbar-aside">
@@ -93,10 +93,10 @@
                   <div class="rd-navbar-main">
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Home</a></li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="orders.html">Orders</a></li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="menu.html">Menu</a></li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.html">About</a></li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="index.php">Home</a></li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="orders.php">Orders</a></li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="menu.php">Menu</a></li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.php">About</a></li>
                     </ul>
                   </div>
                 </div>
@@ -110,13 +110,13 @@
       <!-- What We Offer-->
       <section class="section section-md bg-default">
         <div class="container">
-          <h3 class="oh-desktop"><span class="d-inline-block wow slideInDown">Gula Burger</span></h3>
+          <h3 class="oh-desktop"><span class="d-inline-block wow slideInDown">Cispy Burger</span></h3>
           <div class="row row-md row-30">
             <div class="col-sm-6 col-lg-4">
               <div class="oh-desktop">
                 <!-- Services Terri-->
                 <article>
-                  <div><img src="images/GulaBurgerDetails.jpg" alt="" width="370" height="278"/></div>
+                  <div><img src="images/CrackBurgerDetails.jpg" alt="" width="370" height="278"/></div>
                 </article>
               </div>
             </div>
@@ -125,22 +125,23 @@
                   <!-- Services Terri-->
                   <article style="padding-left: 20px;">
                     <h6 style="text-align: start;">Descripcion</h6>
-                    <p style="text-align: start;">Una explosión de sabores en cada bocado. Esta hamburguesa combina la jugosidad de tres tipos de carne con la cremosidad del queso de cabra y un toque de dulzura de la cebolla caramelizada.</p>
+                    <p style="text-align: start;">Un desafío para los paladares más exigentes. Nuestra hamburguesa cuádruple es una montaña de carne y queso que te dejará sin aliento. Cuatro jugosas patties de carne a la parrilla se apilan, separadas por generosas porciones de queso cheddar derretido y crujiente tocino. Para darle un toque extra de sabor, hemos añadido cebolla caramelizada, que aporta una dulzura y una textura inigualable. Todo esto, sobre un pan brioche suave y tostado, que soporta esta creación culinaria digna de los amantes de las hamburguesas más atrevidas.</p>
                     <h6 style="padding-top: 25px; text-align: start;">Ingredientes</h7>
                       <!-- "text-decoration: none; font-weight: normal; " -->
                     <ul style="padding-top: 20px; padding-bottom: 20px; color: #777777; text-transform: capitalize; font-family: Roboto; font-weight: normal;">
                         <li>Pan de sesamo</li>
-                        <li>3 patties de carne de res molida</li>
+                        <li>4 patties de carne de res molida</li>
                         <li>Queso cheddar</li>
-                        <li>Queso de Cabra</li>
                         <li>Tocino</li>
                         <li>cebolla caramelizada</li>
                     </ul>
                     <h7 style="color: #777777;">Opcionales</h7>
                     <ul style="padding-top: 20px; color: #777777; text-transform: capitalize; font-family: Roboto; font-weight: normal;">
-                        <li>Mostaza antigua con miel </li>
-                        <li>Pesto de albahaca</li>
-                        <li>Rúcula</li>
+                        <li>Salsa BBQ ahumada</li>
+                        <li>Mostaza antigua </li>
+                        <li>Pepinillos encurtidos</li>
+                        <li>Lechuga</li>
+                        <li>Tomate</li>
                     </ul>
                   </article>
                 </div>
@@ -168,12 +169,12 @@
               <div class="col-md-6 col-lg-4 col-xl-3">
                 <h5 class="footer-modern-title oh-desktop"><span class="d-inline-block wow slideInLeft">Information</span></h5>
                 <ul class="footer-modern-list d-inline-block d-sm-block wow fadeInUp">
-                  <li><a href="about-us.html">About us</a></li>
+                  <li><a href="about-us.php">About us</a></li>
                   <li><a href="#">Latest News</a></li>
                   <li><a href="#">Our Menu</a></li>
                   <li><a href="#">FAQ</a></li>
                   <li><a href="#">Shop</a></li>
-                  <li><a href="contacts.html">Contact Us</a></li>
+                  <li><a href="contacts.php">Contact Us</a></li>
                 </ul>
               </div>
               <div class="col-lg-4 col-xl-5">
@@ -198,7 +199,7 @@
             <div class="row row-30 align-items-center">
               <div class="col-sm-6 col-md-7 col-lg-4 col-xl-4">
                 <div class="row row-30 align-items-center text-lg-center">
-                  <div class="col-md-7 col-xl-6"><a class="brand" href="index.html"><img src="images/logo-inverse-198x66.png" alt="" width="198" height="66"/></a></div>
+                  <div class="col-md-7 col-xl-6"><a class="brand" href="index.php"><img src="images/logo-inverse-198x66.png" alt="" width="198" height="66"/></a></div>
                   <div class="col-md-5 col-xl-6">
                     <div class="iso-1"><span><img src="images/like-icon-58x25.png" alt="" width="58" height="25"/></span><span class="iso-1-big">9.4k</span></div>
                   </div>
