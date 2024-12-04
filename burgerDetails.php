@@ -1,16 +1,21 @@
 <?php include_once("includes/restricted/header.php"); ?>
       <!-- What We Offer-->
       <?php
-        $ID_item = $conn->real_escape_string($_GET['item_id']);
-        $sql = "SELECT name_of_item FROM to_menu WHERE id_item = '{$ID_item}'";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-          // output data of each row
-            while($row = $result->fetch_assoc()) {
-              $titleOfItem = $row['name_of_item'];
-            }
+        if (isset($_GET['item_id'])){
+          $ID_item = $conn->real_escape_string($_GET['item_id']);
+          $sql = "SELECT name_of_item FROM to_menu WHERE id_item = '{$ID_item}'";
+          $result = $conn->query($sql);
+  
+          if ($result->num_rows > 0) {
+            // output data of each row
+              while($row = $result->fetch_assoc()) {
+                $titleOfItem = $row['name_of_item'];
+              }
+          }
+        } else {
+          header("Location: /index.php?item=not_found");
         }
+        
         ?>
       <section class="section section-md bg-default">
         <div class="container">
