@@ -9,7 +9,7 @@
               <div class="oh-desktop">
                 <!-- Services Terri-->
                 <article class="services-terri wow slideInUp">
-                  <div class="services-terri-figure"><a href="cheeseBurgerDetails.php"><img src="images/Cheeseburger-600x600.png" alt="" width="370" height="278"/></a>
+                  <div class="services-terri-figure"><a href="burgerDetails.php?item_id=1"><img src="images/Cheeseburger-600x600.png" alt="" width="370" height="278"/></a>
                   </div>
                   <div class="services-terri-figure"><h5>Cheese Burger</h5></div>
                 </article>
@@ -19,7 +19,7 @@
               <div class="oh-desktop">
                 <!-- Services Terri-->
                 <article class="services-terri wow slideInDown">
-                  <div class="services-terri-figure"><a href="baconBurgerDetails.php"><img src="images/BaconBurger-164x164.jpg" alt="" width="370" height="278"/></a>
+                  <div class="services-terri-figure"><a href="burgerDetails.php?item_id=2"><img src="images/BaconBurger-164x164.jpg" alt="" width="370" height="278"/></a>
                   </div>
                   <div class="services-terri-figure"><h5>Bacon Burger</h5></div>
                 </article>
@@ -29,7 +29,7 @@
               <div class="oh-desktop">
                 <!-- Services Terri-->
                 <article class="services-terri wow slideInUp">
-                  <div class="services-terri-figure"><a href="kingBurgerDetails.php"><img src="images/KingBurguer.jpg" alt="" width="370" height="278"/></a>
+                  <div class="services-terri-figure"><a href="burgerDetails.php?item_id=3"><img src="images/KingBurguer.jpg" alt="" width="370" height="278"/></a>
                   </div>
                   <div class="services-terri-figure"><h5>King Burger</h5></div>
                 </article>
@@ -39,7 +39,7 @@
               <div class="oh-desktop">
                 <!-- Services Terri-->
                 <article class="services-terri wow slideInDown">
-                  <div class="services-terri-figure"><a href="SimpleBurgerDetails.php"><img src="images/SimpleBuger-164x164.jpg" alt="" width="370" height="278"/></a>
+                  <div class="services-terri-figure"><a href="burgerDetails.php?item_id=4"><img src="images/SimpleBuger-164x164.jpg" alt="" width="370" height="278"/></a>
                   </div>
                   <div class="services-terri-figure"><h5>Simple Burger</h5></div>
                 </article>
@@ -49,19 +49,9 @@
               <div class="oh-desktop">
                 <!-- Services Terri-->
                 <article class="services-terri wow slideInUp">
-                  <div class="services-terri-figure"><a href="crispyBurgerDetails.php"><img src="images/CrispyBurger-164x164.jpg" alt="" width="370" height="278"/></a>
+                  <div class="services-terri-figure"><a href="burgerDetails.php?item_id=5"><img src="images/CrispyBurger-164x164.jpg" alt="" width="370" height="278"/></a>
                   </div>
                   <div class="services-terri-figure"><h5>Crispy Burger</h5></div>
-                </article>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4">
-              <div class="oh-desktop">
-                <!-- Services Terri-->
-                <article class="services-terri wow slideInDown">
-                  <div class="services-terri-figure"><a href="gulaBurgerDetails.php"><img src="images/GulaBurger-164x164.jpg" alt="" width="370" height="278"/></a>
-                  </div>
-                  <div class="services-terri-figure"><h5>Extra Sauce Burger</h5></div>
                 </article>
               </div>
             </div>
