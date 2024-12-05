@@ -1,18 +1,5 @@
 <?php include_once("includes/restricted/header.php"); ?>
- <!-- Swiper-->
-  <?php
-   // Fix here, was not actually updated
-    $ID_item = $conn->real_escape_string($_GET['item_id']);
-    $sql = "SELECT description_of_item, ingredients FROM to_menu WHERE id_item = '{$ID_item}'";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-      // output data of each row
-        while($row = $result->fetch_assoc()) {
-          echo $row['description_of_item'];
-        }
-    }
-  ?>
+  <!-- Swiper-->
   <section class="section swiper-container swiper-slider swiper-slider-2 swiper-slider-3" data-loop="true" data-autoplay="5000" data-simulate-touch="false" data-slide-effect="fade">
       <div class="swiper-wrapper text-sm-left">
         <div class="swiper-slide context-dark" data-slide-bg="images/baconBurger.jpg">
@@ -63,64 +50,30 @@
         <div class="container">
           <h3 class="oh-desktop"><span class="d-inline-block wow slideInDown">Our Menu</span></h3>
           <div class="row row-md row-30">
-            <div class="col-sm-6 col-lg-4">
-              <div class="oh-desktop">
+          
                 <!-- Services Terri-->
-                <article class="services-terri wow slideInUp">
-                  <div class="services-terri-figure"><a href="/megaburguer/burgerDetails.php?item_id=1"><img src="./images/Cheeseburger-600x600.png" alt="" width="370" height="278"/></a>
+                <?php
+                  // Fix here, was not actually updated
+                  $sql = "SELECT * FROM to_menu";
+                  $result = $conn->query($sql);
+
+                  if ($result->num_rows > 0) {
+                    // output data of each row
+                      while($row = $result->fetch_assoc()):
+                  ?>
+                  <div class="col-sm-6 col-lg-4">
+                    <div class="oh-desktop">
+                      <article class="services-terri wow slideInUp">
+                        <div class="services-terri-figure"><a href="/megaburguer/burgerDetails.php?item_id=<?= $row['id_item']; ?>"><img src="./<?= $row['image_url']; ?>" alt="" width="370" height="278"/></a>
+                        </div>
+                        <div class="services-terri-figure"><h5><?= $row['name_of_item'] ?></h5></div>
+                      </article>
+                    </div>
                   </div>
-                  <div class="services-terri-figure"><h5>Cheese Burger</h5></div>
-                </article>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4">
-              <div class="oh-desktop">
-                <!-- Services Terri-->
-                <article class="services-terri wow slideInDown">
-                  <div class="services-terri-figure"><a href="/megaburguer/burgerDetails.php?item_id=2"><img src="./images/BaconBurger-164x164.jpg" alt="" width="370" height="278"/></a>
-                  </div>
-                  <div class="services-terri-figure"><h5>Bacon Burger</h5></div>
-                </article>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4">
-              <div class="oh-desktop">
-                <!-- Services Terri-->
-                <article class="services-terri wow slideInUp">
-                  <div class="services-terri-figure"><a href="/megaburguer/burgerDetails.php?item_id=3"><img src="./images/KingBurguer.jpg" alt="" width="370" height="278"/></a>
-                  </div>
-                  <div class="services-terri-figure"><h5>King Burger</h5></div>
-                </article>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4">
-              <div class="oh-desktop">
-                <!-- Services Terri-->
-                <article class="services-terri wow slideInDown">
-                  <div class="services-terri-figure"><a href="/megaburguer/burgerDetails.php?item_id=4"><img src="./images/SimpleBuger-164x164.jpg" alt="" width="370" height="278"/></a>
-                  </div>
-                  <div class="services-terri-figure"><h5>Simple Burger</h5></div>
-                </article>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4">
-              <div class="oh-desktop">
-                <!-- Services Terri-->
-                <article class="services-terri wow slideInUp">
-                  <div class="services-terri-figure"><a href="/megaburguer/burgerDetails.php?item_id=5"><img src="./images/CrispyBurger-164x164.jpg" alt="" width="370" height="278"/></a>
-                  </div>
-                  <div class="services-terri-figure"><h5>Crispy Burger</h5></div>
-                </article>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4">
-              <div class="oh-desktop">
-                <!-- Services Terri-->
-                <article class="services-terri wow slideInDown">
-                  <div class="services-terri-figure"><a href="/megaburguer/extraSauceBurgerDetails.php?item_id=6"><img src="./images/GulaBurger-164x164.jpg" alt="" width="370" height="278"/></a>
-                  </div>
-                  <div class="services-terri-figure"><h5>Extra Sauce Burger</h5></div>
-                </article>
+                  <?php
+                      endwhile;
+                    } 
+                  ?>
               </div>
             </div>
           </div>
@@ -131,75 +84,36 @@
         <div class="container">
           <h3 class="oh-desktop"><span class="d-inline-block wow slideInUp">Selected Burgers</span></h3>
           <div class="row row-lg row-30">
+            <?php 
+            // Fix here, was not actually updated
+            $sql = "SELECT * FROM to_menu LIMIT 4";
+            $result = $conn->query($sql);     
+            if ($result->num_rows > 0) {
+              // output data of each row
+              while($row2 = $result->fetch_assoc()):
+
+            ?>
             <div class="col-sm-6 col-lg-4 col-xl-3">
               <!-- Product-->
               <article class="product wow fadeInLeft" data-wow-delay=".15s">
-                <div class="product-figure"><img src="./images/BaconBurger-164x164.jpg" alt="" width="161" height="162"/>
+                <div class="product-figure"><img src="./<?= $row2['image_url']; ?>" alt="" width="161" height="162"/>
                 </div>
                 <div class="product-rating"><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star text-gray-13"></span>
                 </div>
-                <h6 class="product-title">Bacon Burger</h6>
+                <h6 class="product-title"><?= $row2['name_of_item']; ?></h6>
                 <div class="product-price-wrap">
-                  <div class="product-price">$7.00</div>
+                  <div class="product-price">$ <?= $row2['price']; ?></div>
                 </div>
                 <div class="product-button">
                   <div class="button-wrap"><a class="button button-xs button-primary button-winona" href="#">Add to cart</a></div>
-                  <div class="button-wrap"><a class="button button-xs button-secondary button-winona" href="/megaburguer/baconBurgerDetails.php">View Product</a></div>
+                  <div class="button-wrap"><a class="button button-xs button-secondary button-winona" href="/megaburguer/burgerDetails.php?item_id=<?= $row2['id_item']; ?>">View Product</a></div>
                 </div>
               </article>
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-3">
-              <!-- Product-->
-              <article class="product wow fadeInLeft" data-wow-delay=".1s">
-                <div class="product-figure"><img src="./images/Cheeseburger-600x600.png" alt="" width="161" height="162"/>
-                </div>
-                <div class="product-rating"><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span>
-                </div>
-                <h6 class="product-title">Cheese Burger</h6>
-                <div class="product-price-wrap">
-                  <div class="product-price">$5.00</div>
-                </div>
-                <div class="product-button">
-                  <div class="button-wrap"><a class="button button-xs button-primary button-winona" href="#">Add to cart</a></div>
-                  <div class="button-wrap"><a class="button button-xs button-secondary button-winona" href="/megaburguer/cheeseBurgerDetails.php">View Product</a></div>
-                </div><span class="product-badge product-badge-new">New</span>
-              </article>
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-3">
-              <!-- Product-->
-              <article class="product wow fadeInLeft" data-wow-delay=".05s">
-                <div class="product-figure"><img src="./images/KingBurguer.jpg" alt="" width="161" height="162"/>
-                </div>
-                <div class="product-rating"><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star text-gray-13"></span>
-                </div>
-                <h6 class="product-title">The King Burger</h6>
-                <div class="product-price-wrap">
-                  <div class="product-price">$12.00</div>
-                </div>
-                <div class="product-button">
-                  <div class="button-wrap"><a class="button button-xs button-primary button-winona" href="#">Add to cart</a></div>
-                  <div class="button-wrap"><a class="button button-xs button-secondary button-winona" href="/megaburguer/kingBurguerDetails.php">View Product</a></div>
-                </div>
-              </article>
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-3">
-              <!-- Product-->
-              <article class="product wow fadeInLeft">
-                <div class="product-figure"><img src="./images/SimpleBuger-164x164.jpg" alt="" width="161" height="162"/>
-                </div>
-                <div class="product-rating"><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span>
-                </div>
-                <h6 class="product-title">Simple Burger</h6>
-                <div class="product-price-wrap">
-                  <div class="product-price product-price-old">$5.00</div>
-                  <div class="product-price">$4.30</div>
-                </div>
-                <div class="product-button">
-                  <div class="button-wrap"><a class="button button-xs button-primary button-winona" href="#">Add to cart</a></div>
-                  <div class="button-wrap"><a class="button button-xs button-secondary button-winona" href="/megaburguer/SimpleBurgerDetails.php">View Product</a></div>
-                </div><span class="product-badge product-badge-sale">Sale</span>
-              </article>
-            </div>
+            </div>  
+            <?php
+              endwhile;
+            }
+            ?>
           </div>
         </div>
       </section>
