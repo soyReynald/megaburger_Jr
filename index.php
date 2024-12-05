@@ -1,6 +1,7 @@
 <?php include_once("includes/restricted/header.php"); ?>
  <!-- Swiper-->
   <?php
+   // Fix here, was not actually updated
     $ID_item = $conn->real_escape_string($_GET['item_id']);
     $sql = "SELECT description_of_item, ingredients FROM to_menu WHERE id_item = '{$ID_item}'";
     $result = $conn->query($sql);
