@@ -1,21 +1,19 @@
 <?php
-session_start();
-$servername = "localhost";
-$username = "root";
-$password = "";
-$db = "hamburguers_bd";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $db);
-
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+define('ROOT', 'C:\xampp\htdocs\megaburguer');
+require(ROOT . '\includes\restricted\processAdminForm.php');
+// echo dirname($file)."/processAdminForm.php";
+exit;
 
 $sql = "SELECT * FROM to_menu";
 
 $result = $conn->query($sql);
-$_SESSION['employee_name'];
+
+if (isset($_SESSION['employee_name']) !== null) 
+{
+	@$_SESSION['employee_name'];
+} else {
+	header("Location: ../index.php");
+}
 
 ?>
 <!doctype html>

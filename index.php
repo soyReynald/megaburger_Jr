@@ -1,5 +1,17 @@
 <?php include_once("includes/restricted/header.php"); ?>
  <!-- Swiper-->
+  <?php
+    $ID_item = $conn->real_escape_string($_GET['item_id']);
+    $sql = "SELECT description_of_item, ingredients FROM to_menu WHERE id_item = '{$ID_item}'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+      // output data of each row
+        while($row = $result->fetch_assoc()) {
+          echo $row['description_of_item'];
+        }
+    }
+  ?>
   <section class="section swiper-container swiper-slider swiper-slider-2 swiper-slider-3" data-loop="true" data-autoplay="5000" data-simulate-touch="false" data-slide-effect="fade">
       <div class="swiper-wrapper text-sm-left">
         <div class="swiper-slide context-dark" data-slide-bg="images/baconBurger.jpg">
@@ -74,7 +86,7 @@
               <div class="oh-desktop">
                 <!-- Services Terri-->
                 <article class="services-terri wow slideInUp">
-                  <div class="services-terri-figure"><a href="/megaburguer/kingBurgerDetails.php?item_id=3"><img src="./images/KingBurguer.jpg" alt="" width="370" height="278"/></a>
+                  <div class="services-terri-figure"><a href="/megaburguer/burgerDetails.php?item_id=3"><img src="./images/KingBurguer.jpg" alt="" width="370" height="278"/></a>
                   </div>
                   <div class="services-terri-figure"><h5>King Burger</h5></div>
                 </article>
@@ -84,7 +96,7 @@
               <div class="oh-desktop">
                 <!-- Services Terri-->
                 <article class="services-terri wow slideInDown">
-                  <div class="services-terri-figure"><a href="/megaburguer/SimpleBurgerDetails.php?item_id=4"><img src="./images/SimpleBuger-164x164.jpg" alt="" width="370" height="278"/></a>
+                  <div class="services-terri-figure"><a href="/megaburguer/burgerDetails.php?item_id=4"><img src="./images/SimpleBuger-164x164.jpg" alt="" width="370" height="278"/></a>
                   </div>
                   <div class="services-terri-figure"><h5>Simple Burger</h5></div>
                 </article>
@@ -94,7 +106,7 @@
               <div class="oh-desktop">
                 <!-- Services Terri-->
                 <article class="services-terri wow slideInUp">
-                  <div class="services-terri-figure"><a href="/megaburguer/crispyBurgerDetails.php?item_id=5"><img src="./images/CrispyBurger-164x164.jpg" alt="" width="370" height="278"/></a>
+                  <div class="services-terri-figure"><a href="/megaburguer/burgerDetails.php?item_id=5"><img src="./images/CrispyBurger-164x164.jpg" alt="" width="370" height="278"/></a>
                   </div>
                   <div class="services-terri-figure"><h5>Crispy Burger</h5></div>
                 </article>

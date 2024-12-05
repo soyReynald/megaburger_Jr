@@ -1,4 +1,10 @@
 <?php session_start(); ?>
+<?php
+if (!isset($_SESSION['admin'])) {
+	header("Location: ../index.php");
+}
+
+?>
 <!DOCTYPE html>
 <!-- saved from url=(0053)https://colorlib.com/etc/regform/colorlib-regform-36/ -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
