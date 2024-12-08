@@ -12,11 +12,24 @@ if (isset($_SESSION['admin'])):
 </head>
 <body>
     <h2>Add a new menu burguer</h2>
-    <p class="lead">No Plugins <b>Just Javascript</b></p>
     <!-- Upload  -->
-    <form id="file-upload-form" class="uploader">
-    <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+    <form id="file-upload-form" class="uploader" action="">
+    <label>Name of product</label>
+    <input id="product_name" name="item_name" type="text"/>
 
+    <label>Price</label>
+    <input id="product_price" name="price" type="number"/>
+    
+    <label>Ingredients</label>
+    <textarea id="product_price" name="price"></textarea>
+
+    <label>Description</label>    
+    <textarea id="product_price" name="price"></textarea>
+
+    <label>Total to be available</label>
+    <input id="product_in_stock" name="product_in_stock" type="number"/>
+
+    <input id="file-upload" type="file" name="fileUpload" accept="image/*"/>
     <label for="file-upload" id="file-drag">
         <img id="file-image" src="#" alt="Preview" class="hidden">
         <div id="start">
