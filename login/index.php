@@ -322,7 +322,7 @@ gtag('config', 'UA-23581568-13');
 <?php
 	endif;
 	if(isset($_SESSION['admin'])):
-		header("Location: /admin_area.php");
+		header("Location: ../admin_area/");
 	endif;
 	if(!isset($_SESSION)){
 		header("Location: ../index.php");
