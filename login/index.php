@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <?php
-if (!isset($_SESSION['admin'])):
+if (isset($_SESSION['admin'])):
 	header("Location: ../index.php");
 ?>
 <!DOCTYPE html>
