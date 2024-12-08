@@ -1,13 +1,17 @@
+<?php
+session_start();
+if (isset($_SESSION['admin'])):
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Admin area</title>
 </head>
 <body>
-    <h2>File Upload & Image Preview</h2>
+    <h2>Add a new menu burguer</h2>
     <p class="lead">No Plugins <b>Just Javascript</b></p>
     <!-- Upload  -->
     <form id="file-upload-form" class="uploader">
@@ -23,12 +27,18 @@
         </div>
         <div id="response" class="hidden">
         <div id="messages"></div>
-        <progress class="progress" id="file-progress" value="0">
+        <!-- <progress class="progress" id="file-progress" value="0">
             <span>0</span>%
-        </progress>
+        </progress> -->
         </div>
     </label>
     </form>
     <script src="script.js" type="text/javascript"></script>
 </body>
 </html>
+<?php
+endif;
+if (!isset($_SESSION['admin'])):
+    header("Location: ../");
+endif;
+?>
