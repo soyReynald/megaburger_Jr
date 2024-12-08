@@ -1,7 +1,6 @@
 <?php session_start(); ?>
 <?php
-if (isset($_SESSION['admin'])):
-	header("Location: ../index.php");
+if (!isset($_SESSION['admin'])):
 ?>
 <!DOCTYPE html>
 <html>
@@ -322,4 +321,10 @@ gtag('config', 'UA-23581568-13');
 </body><!-- This templates was made by Colorlib (https://colorlib.com) --></html>
 <?php
 	endif;
+	if(isset($_SESSION['admin'])):
+		header("Location: /admin_area.php");
+	endif;
+	if(!isset($_SESSION)){
+		header("Location: ../index.php");
+	}
 ?>
