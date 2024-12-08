@@ -1,14 +1,12 @@
 <?php session_start(); ?>
 <?php
-if (!isset($_SESSION['admin'])) {
+if (!isset($_SESSION['admin'])):
 	header("Location: ../index.php");
-}
-
 ?>
 <!DOCTYPE html>
-<!-- saved from url=(0053)https://colorlib.com/etc/regform/colorlib-regform-36/ -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Megaburguer</title>
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -322,3 +320,6 @@ gtag('config', 'UA-23581568-13');
 <script defer="" src="./form_colorlib_files/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;8e7b65e8ee1d1375&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2024.10.5&quot;,&quot;token&quot;:&quot;cd0b4b3a733644fc843ef0b185f98241&quot;}" crossorigin="anonymous"></script>
 <script src="../menu/js/main.js"></script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) --></html>
+<?php
+	endif;
+?>

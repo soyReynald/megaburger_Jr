@@ -1,8 +1,6 @@
 <?php
 define('ROOT', 'C:\xampp\htdocs\megaburguer');
 require(ROOT . '\includes\restricted\processAdminForm.php');
-// echo dirname($file)."/processAdminForm.php";
-exit;
 
 $sql = "SELECT * FROM to_menu";
 

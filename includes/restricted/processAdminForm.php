@@ -69,10 +69,8 @@ if(isset($_POST['name']) && isset($_POST['your_email']) && isset($_POST['passwor
         header("Location: ../../menu/index.php?loggedin=false");
       }
   }
-
-
-
 }
+
 // ONLY here
 if (isset($_POST['login_employee'])) 
 {
