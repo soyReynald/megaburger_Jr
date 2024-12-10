@@ -8,10 +8,26 @@ if (isset($_SESSION['admin'])):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .logout {
+            background-color: red;
+            border: 1px;
+            border-radius: 5px;
+            padding: 10px;
+            float: right;
+            color: white;
+        }
+
+        .logout:hover {
+            color: black;
+            cursor: pointer;
+        }
+    </style>
     <title>Admin area</title>
 </head>
 <body>
     <h2>Add a new menu burguer</h2>
+    <button type="button" onclick="logout()" class="logout">Logout</button>
     <!-- Upload  -->
     <form id="file-upload-form" class="uploader" action="">
         <fieldset>
@@ -57,8 +73,16 @@ if (isset($_SESSION['admin'])):
     <script src="script.js" type="text/javascript"></script>
     <script type="text/javascript">
         let fd = new FormData();
-        let imageUrl = document.querySelector("#messages strong").innerHTML;
-        let imageBlob = document.querySelector("#file-image").src;
+        if (!document.querySelector("#messages strong")) {
+            console.log("Image is not uploaded yet")
+        } else{ 
+            let imageUrl = document.querySelector("#messages strong").innerHTML;
+        }
+        if (document.querySelector("#file-image").src.includes("#") != false) {
+            let imageBlob = document.querySelector("#file-image").src;
+        } else {
+            let imageBlob = console.log("Image still not loaded");
+        }
 
         let product_name = document.querySelector("#product_name").name;
         let ingredients = document.querySelector("#product_ingredients").name;
@@ -66,8 +90,11 @@ if (isset($_SESSION['admin'])):
         let price = document.querySelector("#product_price").name;
         let in_stock = document.querySelector("#product_in_stock").name;
 
-
-        fd.append("images/"+imageUrl, imageBlob);
+        if (document.querySelector("#file-image").src.includes("#") == false) {
+            fd.append("images/"+imageUrl, imageBlob);
+        } else {
+            let imageBlob = console.log("Image still not loaded"); 
+        }
         fd.append('name', product_name);
         fd.append('ingredients', ingredients)
         fd.append('description', product_description)
@@ -86,6 +113,39 @@ if (isset($_SESSION['admin'])):
             console.log("error", err);
             onFinish(false);
         });
+
+        async function logout() {
+            /// TO re-fine.
+            async function json_as_post_data() {
+                let data = {
+                    "value": "log_off",
+                }
+                return fetch('../includes/restricted/processAdminForm.php', {
+                    method: 'POST',
+                    body: JSON.stringify(data)
+                }).then(response => {
+                    return response.text();
+                });
+            }
+            
+            
+            
+            if(await json_as_post_data())
+            {
+                const valueToLog_Out = JSON.parse(await json_as_post_data());
+
+                if (valueToLog_Out.value == "go") { 
+                    window.location.replace("../login/index.php");
+                }
+            };
+        }
+        (function($) {
+
+            "use strict";
+
+            $('[data-toggle="tooltip"]').tooltip()
+
+        })(jQuery);
     </script>
 </body>
 </html>

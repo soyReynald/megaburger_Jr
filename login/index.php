@@ -194,11 +194,8 @@ if (!isset($_SESSION['admin'])):
 					<?php
 					}
 					?>
-					
-					
 				</div>
 				<div class="form-right d-none" id="form_registry">
-					
 				</div>
 			</form>
 		</div>
