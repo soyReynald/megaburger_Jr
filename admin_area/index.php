@@ -14,39 +14,79 @@ if (isset($_SESSION['admin'])):
     <h2>Add a new menu burguer</h2>
     <!-- Upload  -->
     <form id="file-upload-form" class="uploader" action="">
-    <label>Name of product</label>
-    <input id="product_name" name="item_name" type="text"/>
+        <fieldset>
+            <label>Name of product</label>
+            <input id="product_name" name="item_name" type="text"/>
+        </fieldset>
 
-    <label>Price</label>
-    <input id="product_price" name="price" type="number"/>
-    
-    <label>Ingredients</label>
-    <textarea id="product_price" name="price"></textarea>
+        <fieldset>
+            <label>Price</label>
+            <input id="product_price" name="price" type="number"/>
+        </fieldset>
 
-    <label>Description</label>    
-    <textarea id="product_price" name="price"></textarea>
+        <fieldset>
+            <label>Ingredients</label>
+            <textarea id="product_ingredients" name="ingredients"></textarea>
+        </fieldset>
 
-    <label>Total to be available</label>
-    <input id="product_in_stock" name="product_in_stock" type="number"/>
+        <fieldset>
+            <label>Description</label>    
+            <textarea id="product_description" name="description"></textarea>
+        </fieldset>
 
-    <input id="file-upload" type="file" name="fileUpload" accept="image/*"/>
-    <label for="file-upload" id="file-drag">
-        <img id="file-image" src="#" alt="Preview" class="hidden">
-        <div id="start">
-        <i class="fa fa-download" aria-hidden="true"></i>
-        <div>Select a file or drag here</div>
-        <div id="notimage" class="hidden">Please select an image</div>
-        <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
-        </div>
-        <div id="response" class="hidden">
-        <div id="messages"></div>
-        <!-- <progress class="progress" id="file-progress" value="0">
-            <span>0</span>%
-        </progress> -->
-        </div>
-    </label>
+        <fieldset>
+            <label>Total to be available</label>
+            <input id="product_in_stock" name="product_in_stock" type="number"/>
+        </fieldset>
+
+        <input id="file-upload" type="file" name="fileUpload" accept="image/*"/>
+        <label for="file-upload" id="file-drag">
+            <img id="file-image" src="#" alt="Preview" class="hidden">
+            <div id="start">
+            <i class="fa fa-download" aria-hidden="true"></i>
+            <div>Select a file or drag here</div>
+            <div id="notimage" class="hidden">Please select an image</div>
+            <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
+            </div>
+            <div id="response" class="hidden">
+            <div id="messages"></div>
+            </div>
+        </label>
+        <input type="submit" name="send_burguer_information" id="send_burguer_btn" value="Send"/>
     </form>
     <script src="script.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        let fd = new FormData();
+        let imageUrl = document.querySelector("#messages strong").innerHTML;
+        let imageBlob = document.querySelector("#file-image").src;
+
+        let product_name = document.querySelector("#product_name").name;
+        let ingredients = document.querySelector("#product_ingredients").name;
+        let product_description = document.querySelector("#product_description").name;
+        let price = document.querySelector("#product_price").name;
+        let in_stock = document.querySelector("#product_in_stock").name;
+
+
+        fd.append("images/"+imageUrl, imageBlob);
+        fd.append('name', product_name);
+        fd.append('ingredients', ingredients)
+        fd.append('description', product_description)
+        fd.append('price', price)
+        fd.append('product_in_stock', in_stock)
+
+        fetch("./upload.php", {
+            method: "POST",
+            body: fd
+        }).then(function(response) {
+            response.text().then(function(text) {
+                console.log(text);
+                onFinish(true);
+            });
+        }).catch(function(err) {
+            console.log("error", err);
+            onFinish(false);
+        });
+    </script>
 </body>
 </html>
 <?php

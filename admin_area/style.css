@@ -162,3 +162,78 @@ p {
   border-color: #454cad;
   cursor: pointer;
 }
+/* Admin area personalize styles */
+#file-upload-form fieldset
+{
+  text-align: left;
+  align-items: left;
+  border: none;
+}
+
+#file-upload-form fieldset label:hover {
+  font-family: "Roboto", sans-serif;
+  padding: 1%;
+  text-align: left;
+  border-color: white;
+  border: 3px solid #eee;
+}
+#file-upload-form fieldset label:hover, #file-upload-form fieldset label {
+  border: 0px;
+}
+#product_in_stock, #product_price {
+  max-width: 150px !important;
+}
+
+input[type="number"]#product_price {
+  max-width: 115px;
+}
+
+#file-upload-form label, #file-upload-form input {
+  font-family: "Roboto", sans-serif;
+  padding: 1%;
+  text-align: left;
+  background-color: #f8f8f8 !important;
+}
+
+#file-upload-form input {
+  margin-top: 1%;
+  border-radius: 5px;
+  border-width: 1px;
+  width: -webkit-fill-available;
+  background-color: #fff;
+}
+
+#file-upload-form #product_price{
+  width: -webkit-fill-available !important;
+}
+
+#file-upload-form textarea {
+  width: -webkit-fill-available;
+  background: #f8f8f8 !important;
+}
+#file-upload-form label#file-drag, #file-upload-form input#file-drag{
+  text-align: center;
+}
+
+#send_burguer_btn {
+  margin-top: 10px !important;
+  float: left;
+  border-width: 1px;
+  border-radius: 4px;
+  padding: 8px !important;
+  background: #999;
+  color: black;
+  width: 10% !important;
+  text-align: center !important;
+}
+
+#send_burguer_btn:hover {
+  cursor: pointer;
+  background: #a13535;
+  color: #fff;
+}
+
+#send_burguer_btn:hover {
+  background: #773434 !important;
+  color: white !important;
+}
