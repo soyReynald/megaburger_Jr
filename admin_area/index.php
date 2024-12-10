@@ -78,7 +78,7 @@ if (isset($_SESSION['admin'])):
         } else{ 
             let imageUrl = document.querySelector("#messages strong").innerHTML;
         }
-        if (document.querySelector("#file-image") != null) {
+        if (document.querySelector("#file-image").src.includes("#") != false) {
             let imageBlob = document.querySelector("#file-image").src;
         } else {
             let imageBlob = console.log("Image still not loaded");
@@ -90,7 +90,7 @@ if (isset($_SESSION['admin'])):
         let price = document.querySelector("#product_price").name;
         let in_stock = document.querySelector("#product_in_stock").name;
 
-        if (document.querySelector("#file-image") != null) {
+        if (document.querySelector("#file-image").src.includes("#") != false) {
             fd.append("images/"+imageUrl, imageBlob);
         } else {
             let imageBlob = console.log("Image still not loaded"); 
