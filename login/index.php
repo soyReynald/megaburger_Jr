@@ -134,6 +134,26 @@ if (!isset($_SESSION['admin'])):
 		margin: 23px;
 		cursor: pointer;
 	}
+	#login_admin_restricted_arc,  .login_admin_restricted_arc{
+		height: 32px !important;
+		float: left;
+		margin-left: 57px;
+		text-align: center;
+		display: inline-flex;
+		flex-direction: row;
+		align-items: flex-end;
+	}
+	#login_admin_restricted_arc span {
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+	.login_admin_restricted_arc input[type='checkbox']{
+		width: 16px;
+		height: 16px !important;
+		box-shadow: #000 0px 0px 1px;
+		margin-left: 0px !important;
+		margin-right: 10px;
+	}
     </style>
 	<meta name="robots" content="noindex, follow">
 </head>
@@ -157,9 +177,12 @@ if (!isset($_SESSION['admin'])):
 						</div>
 						<div class="form-row-last">
 							<input type="submit" name="login" class="login" value="Login">
+							
+  							<label for="login_admin_restricted_arc" class="login_admin_restricted_arc">
+							  <input type="checkbox" id="login_admin_restricted_arc" name="login_admin_restricted_arc" value="login_admin_restricted_arc-true"></input>
+								<span>Restricted admin area</span>
+							</label>
 						</div>
-						<input type="checkbox" id="login_admin_restricted_arc" name="login_admin_restricted_arc" value="login_admin_restricted_arc-true">
-  						<label for="login_admin_restricted_arc"> -[3]- (Restricted admin area) </label><br>
 						<?php
 						if(isset($_GET["user_duplicated"]) && $_GET["user_duplicated"] == "true"){ ?>
 							<div class="notice danger">
