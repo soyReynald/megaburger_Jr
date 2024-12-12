@@ -78,7 +78,7 @@ if (isset($_SESSION['admin'])):
         } else{ 
             let imageUrl = document.querySelector("#messages strong").innerHTML;
         }
-        if (document.querySelector("#file-image").src.includes("#") != false) {
+        if (document.qu erySelector("#file-image").src.includes("#") != false) {
             let imageBlob = document.querySelector("#file-image").src;
         } else {
             let imageBlob = console.log("Image still not loaded");

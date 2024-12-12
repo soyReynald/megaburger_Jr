@@ -158,8 +158,8 @@ if (!isset($_SESSION['admin'])):
 						<div class="form-row-last">
 							<input type="submit" name="login" class="login" value="Login">
 						</div>
-						<input type="checkbox" id="login_admin_restricted_arc" name="login_admin_restricted_arc" value="Bike">
-  						<label for="login_admin_restricted_arc"> I have a bike</label><br>
+						<input type="checkbox" id="login_admin_restricted_arc" name="login_admin_restricted_arc" value="login_admin_restricted_arc-true">
+  						<label for="login_admin_restricted_arc"> -[3]- (Restricted admin area) </label><br>
 						<?php
 						if(isset($_GET["user_duplicated"]) && $_GET["user_duplicated"] == "true"){ ?>
 							<div class="notice danger">
