@@ -158,6 +158,8 @@ if (!isset($_SESSION['admin'])):
 						<div class="form-row-last">
 							<input type="submit" name="login" class="login" value="Login">
 						</div>
+						<input type="checkbox" id="login_admin_restricted_arc" name="login_admin_restricted_arc" value="Bike">
+  						<label for="login_admin_restricted_arc"> I have a bike</label><br>
 						<?php
 						if(isset($_GET["user_duplicated"]) && $_GET["user_duplicated"] == "true"){ ?>
 							<div class="notice danger">
@@ -279,11 +281,17 @@ function turnLoginOn() {
 		// Button to login
 		const btn_for_login = document.createElement("input");
 		btn_for_login.setAttribute("type", "submit");
-		btn_for_login.setAttribute("name", "login_employee");
+		
+		
 		btn_for_login.setAttribute("value", "Login");
 		btn_for_login.setAttribute("class", "login");
 		
-
+		let checkbox = document.getElementById("login_admin_restricted_arc");
+		if(let checkbox.checked) {
+			btn_for_login.setAttribute("name", "login_admin_restricted_arc");
+		} else {
+			btn_for_login.setAttribute("name", "login_employee");
+		}
 		document.querySelector(".register").remove();
 
 		document.querySelector("#form_registry .form-row-last").appendChild(btn_for_login);

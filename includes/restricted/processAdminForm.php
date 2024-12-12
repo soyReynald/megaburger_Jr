@@ -101,7 +101,9 @@ if (isset($_POST['login_employee']))
   }
 }
 
-if (!isset($_POST['login_employee'])) {
+if (!isset($_POST['login_employee']) && isset($_POST['login_admin_restricted_arc'])) {
+  
+} else {
   $_POST = json_decode(file_get_contents('php://input'), true);
   if (isset($_POST['value']) && $_POST['value'] == "log_off") {
     if (isset($_SESSION['employee_name'])){
