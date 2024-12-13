@@ -179,7 +179,7 @@ if (!isset($_SESSION['admin'])):
 							<input type="submit" name="login" class="login" value="Login">
 							
   							<label for="login_admin_restricted_arc" class="login_admin_restricted_arc">
-							  <input type="checkbox" id="login_admin_restricted_arc" name="login_admin_restricted_arc" value="login_admin_restricted_arc-true"></input>
+							  <input type="checkbox" id="login_admin_restricted_arc" name="login_admin_restricted" value="true"></input>
 								<span>Restricted admin area</span>
 							</label>
 						</div>
@@ -194,7 +194,6 @@ if (!isset($_SESSION['admin'])):
 						?>
 					<?php
 					} else {
-
 					?>
 					
 					<div class="form-row-last">
@@ -211,11 +210,8 @@ if (!isset($_SESSION['admin'])):
 								  	<span class="slider round"></span>
 								</label>';
 							}
-
 						?>
 					</div>
-					
-
 					<?php
 					}
 					?>
@@ -238,7 +234,7 @@ if (!isset($_SESSION['admin'])):
   {
     document.querySelector("#form_registry").innerHTML = "";
   }
-  if (document.location.href.includes("loggedin=true")) {
+  else if (document.location.href.includes("loggedin=true")) {
 	document.querySelector("#form_registry").classList.remove("d-none");
     document.querySelector("#form_registry").innerHTML = `
                 <h2 id="title-to-registry-of-employee">Registry an employee</h2>
@@ -284,6 +280,11 @@ if (!isset($_SESSION['admin'])):
 						<input type="submit" name="register" class="register" value="Register Employee">
 					</div>
     `;
+  } else if { 
+	// Job 38:1,2 / With the permission of HIM.
+	if(document.location.href.includes("loggedin=admin_restricted")){
+		window.location.replace("../admin_area/index.php");
+	}
   }
 
   window.dataLayer = window.dataLayer || [];
@@ -292,9 +293,10 @@ if (!isset($_SESSION['admin'])):
 function turnLoginOn() {
 	// Get the checkbox
 	var checkBox = document.getElementById("turnOnLogin-Checkbox");
+	let checkbox_2 = document.getElementById("login_admin_restricted_arc");
 
 	// If the checkbox is checked, display the output text
-	if (checkBox.checked == true)
+	if (checkbox.checked == true || checkbox_2.checked == false)
 	{
 		document.querySelector("#terms-and-rights").style.display = "none";
 		document.querySelector("#name-row").style.display = "none";
@@ -309,8 +311,7 @@ function turnLoginOn() {
 		btn_for_login.setAttribute("value", "Login");
 		btn_for_login.setAttribute("class", "login");
 		
-		let checkbox = document.getElementById("login_admin_restricted_arc");
-		if(let checkbox.checked) {
+		if(let checkbox_2.checked) {
 			btn_for_login.setAttribute("name", "login_admin_restricted_arc");
 		} else {
 			btn_for_login.setAttribute("name", "login_employee");
@@ -318,7 +319,25 @@ function turnLoginOn() {
 		document.querySelector(".register").remove();
 
 		document.querySelector("#form_registry .form-row-last").appendChild(btn_for_login);
-	} 
+	} else if(checkbox_2.checked == true) 
+	{
+		document.querySelector("#terms-and-rights").style.display = "none";
+		document.querySelector("#name-row").style.display = "none";
+		document.querySelector("#title-to-registry-of-employee").innerHTML = "Login the Admin";
+		document.querySelector("#name").setAttribute("required", "false");
+		document.querySelector("#name").setAttribute("type", "hidden");
+		// Button to login
+		const btn_for_login = document.createElement("input");
+		btn_for_login.setAttribute("type", "submit");
+		
+		btn_for_login.setAttribute("value", "Login");
+		btn_for_login.setAttribute("class", "login");
+		
+		btn_for_login.setAttribute("name", "login_admin_restricted_arc");
+		document.querySelector(".register").remove();
+
+		document.querySelector("#form_registry .form-row-last").appendChild(btn_for_login);
+	}
 	else 
 	{
 		document.querySelector("#terms-and-rights").style.display = "block";
