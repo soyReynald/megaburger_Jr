@@ -134,25 +134,62 @@ if (!isset($_SESSION['admin'])):
 		margin: 23px;
 		cursor: pointer;
 	}
+	#login_admin_restricted_arc
+	{
+		position: relative;
+	}
+	.login_admin_restricted_arc {
+		margin-left: 5%;
+	}
+
+	.login_admin_restricted_arc span {
+		margin-left: 10px;
+		padding: 7% 0%;
+	}
+
+	input#login_admin_restricted_arc {
+		width: 10px;
+	}
 	#login_admin_restricted_arc,  .login_admin_restricted_arc{
 		height: 32px !important;
 		float: left;
-		margin-left: 57px;
-		text-align: center;
-		display: inline-flex;
-		flex-direction: row;
-		align-items: flex-end;
 	}
 	#login_admin_restricted_arc span {
 		margin-top: auto;
 		margin-bottom: auto;
 	}
-	.login_admin_restricted_arc input[type='checkbox']{
+	#login_admin_restricted_arc input[type='checkbox']{
 		width: 16px;
 		height: 16px !important;
 		box-shadow: #000 0px 0px 1px;
 		margin-left: 0px !important;
 		margin-right: 10px;
+		outline: none;
+		height: 20px;
+		width: 20px;
+		border: 1px solid black;
+		color: black;
+		background-color: rgb(168, 168, 75);
+		box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+		display: inline-block;
+		position: relative;
+	}
+
+	#login_admin_restricted_arc input[type='checkbox'] {
+		width: 16px;
+		height: 16px !important;
+		content: '✓';    /* or '\2713', or '\2714' */
+		text-align: center;
+		vertical-align: middle;
+		position: absolute;
+		height: 1em;
+		width: 1em;
+		line-height: 1;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
 	}
     </style>
 	<meta name="robots" content="noindex, follow">
@@ -224,9 +261,11 @@ if (!isset($_SESSION['admin'])):
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script type="text/javascript">
 	let itemToHide = document.querySelector(".notice.danger");
-	setTimeout(() => {
-		itemToHide.style.display = "none";
-	}, 4000);
+	if(window.location.href.includes("user_duplicated") == true) {
+		setTimeout(() => {
+			itemToHide.style.display = "none";
+		}, 4000);
+	};
 </script>
 <script type="text/javascript" async="" src="./form_colorlib_files/analytics.js.descarga"></script><script async="" src="./form_colorlib_files/js"></script>
 <script>
@@ -280,7 +319,7 @@ if (!isset($_SESSION['admin'])):
 						<input type="submit" name="register" class="register" value="Register Employee">
 					</div>
     `;
-  } else if { 
+  } else { 
 	// Job 38:1,2 / With the permission of HIM.
 	if(document.location.href.includes("loggedin=admin_restricted")){
 		window.location.replace("../admin_area/index.php");
@@ -311,7 +350,7 @@ function turnLoginOn() {
 		btn_for_login.setAttribute("value", "Login");
 		btn_for_login.setAttribute("class", "login");
 		
-		if(let checkbox_2.checked) {
+		if(checkbox_2.checked) {
 			btn_for_login.setAttribute("name", "login_admin_restricted_arc");
 		} else {
 			btn_for_login.setAttribute("name", "login_employee");

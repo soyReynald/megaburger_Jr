@@ -71,6 +71,8 @@ if (isset($_SESSION['admin'])):
         <input type="submit" name="send_burguer_information" id="send_burguer_btn" value="Send"/>
     </form>
     <script src="script.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+    <script src="../menu/main.js"></script>
     <script type="text/javascript">
         let fd = new FormData();
         if (!document.querySelector("#messages strong")) {
@@ -113,39 +115,6 @@ if (isset($_SESSION['admin'])):
             console.log("error", err);
             onFinish(false);
         });
-
-        async function logout() {
-            /// TO re-fine.
-            async function json_as_post_data() {
-                let data = {
-                    "value": "log_off",
-                }
-                return fetch('../includes/restricted/processAdminForm.php', {
-                    method: 'POST',
-                    body: JSON.stringify(data)
-                }).then(response => {
-                    return response.text();
-                });
-            }
-            
-            
-            
-            if(await json_as_post_data())
-            {
-                const valueToLog_Out = JSON.parse(await json_as_post_data());
-
-                if (valueToLog_Out.value == "go") { 
-                    window.location.replace("../login/index.php");
-                }
-            };
-        }
-        (function($) {
-
-            "use strict";
-
-            $('[data-toggle="tooltip"]').tooltip()
-
-        })(jQuery);
     </script>
 </body>
 </html>

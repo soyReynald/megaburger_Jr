@@ -23,10 +23,10 @@ async function logout() {
 		}
 	};
 }
-(function($) {
+// (function($) {
 
-	"use strict";
+// 	"use strict";
 
-	$('[data-toggle="tooltip"]').tooltip()
+// 	$('[data-toggle="tooltip"]').tooltip()
 
-})(jQuery);
+// })(jQuery);
