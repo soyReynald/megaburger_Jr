@@ -1,5 +1,8 @@
 <?php session_start(); ?>
 <?php
+if(!isset($_GET['user'])){
+	header("Location: ../index.php");
+}
 if (!isset($_SESSION['admin'])):
 ?>
 <!DOCTYPE html>
@@ -178,7 +181,7 @@ if (!isset($_SESSION['admin'])):
 	#login_admin_restricted_arc input[type='checkbox'] {
 		width: 16px;
 		height: 16px !important;
-		content: '✓';    /* or '\2713', or '\2714' */
+		content: '✓';
 		text-align: center;
 		vertical-align: middle;
 		position: absolute;
@@ -199,8 +202,8 @@ if (!isset($_SESSION['admin'])):
 		<div class="form-v10-content">
 			<form class="form-detail admin-login" action="../includes/restricted/processAdminForm.php" method="post" id="myform">
 				<div class="form-left" id="form_login">
-					<?php 
-					if(!isset($_GET["loggedin"]) || $_GET["loggedin"] == "false") 
+					<?php
+					if(isset($_GET["loggedin"]) && $_GET["loggedin"] == "false")
 					{
 					?>
 						<h2>Admin Login</h2>
@@ -230,7 +233,7 @@ if (!isset($_SESSION['admin'])):
 						}
 						?>
 					<?php
-					} else {
+					} else if (isset($_GET['user'])) {
 					?>
 					
 					<div class="form-row-last">
@@ -250,7 +253,7 @@ if (!isset($_SESSION['admin'])):
 						?>
 					</div>
 					<?php
-					}
+					} 
 					?>
 				</div>
 				<div class="form-right d-none" id="form_registry">
