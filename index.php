@@ -156,7 +156,9 @@
             </div>
             <div class="col-sm-6 col-lg-3 wow fadeInRight" data-wow-delay=".1s" data-wow-duration="1s">
               <!-- Team Modern-->
-              <article class="team-modern"><a class="team-modern-figure" href="#"><img src="images/team-03-270x236.jpg" alt="" width="270" height="236"/></a>
+              <article class="team-modern"><a class="team-modern-figure" href="#">
+                <!-- <img src="images/team-03-270x236.jpg" alt="" width="270" height="236"/> -->
+              </a>
                 <div class="team-modern-caption">
                   <h6 class="team-modern-name"><a href="#">Max Cutnicky</a></h6>
                   <div class="team-modern-status">Head Baker</div>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 $allowed_momentary_by_jah = $_GET['admin_from_christ'];
-if (isset($_SESSION['admin']) || $_GET['admin_from_christ']):
+if (isset($_SESSION['admin']) || $_GET['admin_from_christ'] == "true"):
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +30,7 @@ if (isset($_SESSION['admin']) || $_GET['admin_from_christ']):
     <h2>Add a new menu burguer</h2>
     <button type="button" onclick="logout()" class="logout">Logout</button>
     <!-- Upload  -->
-    <form id="file-upload-form" class="uploader" action="">
+    <form id="file-upload-form" class="uploader" action="./upload.php" method="POST" enctype="multipart/form-data">
         <fieldset>
             <label>Name of product</label>
             <input id="product_name" name="item_name" type="text"/>
@@ -73,50 +73,6 @@ if (isset($_SESSION['admin']) || $_GET['admin_from_christ']):
     </form>
     <script src="script.js" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
-    <script src="../menu/main.js"></script>
-    <script type="text/javascript">
-        let fd = new FormData();
-        if (!document.querySelector("#messages strong")) {
-            console.log("Image is not uploaded yet")
-        } else{ 
-            let imageUrl = document.querySelector("#messages strong").innerHTML;
-        }
-        if (document.qu erySelector("#file-image").src.includes("#") != false) {
-            let imageBlob = document.querySelector("#file-image").src;
-        } else {
-            let imageBlob = console.log("Image still not loaded");
-        }
-
-        let product_name = document.querySelector("#product_name").name;
-        let ingredients = document.querySelector("#product_ingredients").name;
-        let product_description = document.querySelector("#product_description").name;
-        let price = document.querySelector("#product_price").name;
-        let in_stock = document.querySelector("#product_in_stock").name;
-
-        if (document.querySelector("#file-image").src.includes("#") == false) {
-            fd.append("images/"+imageUrl, imageBlob);
-        } else {
-            let imageBlob = console.log("Image still not loaded"); 
-        }
-        fd.append('name', product_name);
-        fd.append('ingredients', ingredients)
-        fd.append('description', product_description)
-        fd.append('price', price)
-        fd.append('product_in_stock', in_stock)
-
-        fetch("./upload.php", {
-            method: "POST",
-            body: fd
-        }).then(function(response) {
-            response.text().then(function(text) {
-                console.log(text);
-                onFinish(true);
-            });
-        }).catch(function(err) {
-            console.log("error", err);
-            onFinish(false);
-        });
-    </script>
 </body>
 </html>
 <?php
