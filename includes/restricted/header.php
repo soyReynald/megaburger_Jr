@@ -26,6 +26,22 @@
       .button-primary.darker:hover {
         background-color: #244768 !important;
       }
+      a.mdi-send {
+        width: auto !important;
+        line-height: 29px !important;
+        font-size: 16px !important;
+        padding: 2px;
+        padding-left: 8px;
+        padding-right: 7px;
+        line-height: 20px !important;
+      }
+      a.mdi-send:hover {
+        background: #78172f !important;
+      }
+      .mdi-send:before {
+        content: 'Login';
+        font-style: italic;
+      }
     </style>
   </head>
   <body>
@@ -79,25 +95,25 @@
                 </div>
                 <div class="rd-navbar-right rd-navbar-nav-wrap">
                   <div class="rd-navbar-aside">
+                    <ul class="list-share-2">
+                      <li><a class="icon mdi mdi-send" href="./login/index.php?goToLogIn=!21"></a></li>
+                    </ul>
                     <ul class="rd-navbar-contacts-2">
                       <li>
                         <div class="unit unit-spacing-xs">
                           <div class="unit-left"><span class="icon mdi mdi-phone"></span></div>
-                          <div class="unit-body"><a class="phone" href=".tel:#">+1 718-999-3939</a></div>
+                          <div class="unit-body"><a class="phone" href=".tel:#">+1 829-771-3777</a></div>
                         </div>
                       </li>
                       <li>
                         <div class="unit unit-spacing-xs">
                           <div class="unit-left"><span class="icon mdi mdi-map-marker"></span></div>
-                          <div class="unit-body"><a class="address" href=".#">514 S. Magnolia St. Orlando, FL 32806</a></div>
+                          <div class="unit-body"><a class="address" href=".#">514 S. Jesus Christ, Av. Rom. Betancourt</a></div>
                         </div>
                       </li>
                     </ul>
                     <ul class="list-share-2">
-                      <li><a class="icon mdi mdi-facebook" href=".#"></a></li>
                       <li><a class="icon mdi mdi-twitter" href=".#"></a></li>
-                      <li><a class="icon mdi mdi-instagram" href=".#"></a></li>
-                      <li><a class="icon mdi mdi-google-plus" href=".#"></a></li>
                     </ul>
                   </div>
                   <div class="rd-navbar-main">

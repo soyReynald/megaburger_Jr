@@ -68,6 +68,9 @@
                 </div>
                 <div class="rd-navbar-right rd-navbar-nav-wrap">
                   <div class="rd-navbar-aside">
+                    <ul class="list-share-2 zmdi-hc-ul">
+                        <a class="zmdi-hc-li zmdi zmdi-dot-circle-alt" href="#"></a>
+                    </ul>
                     <ul class="rd-navbar-contacts-2">
                       <li>
                         <div class="unit unit-spacing-xs">
@@ -247,7 +250,9 @@
             </div>
             <div class="col-sm-6 col-lg-3 wow fadeInRight" data-wow-delay=".1s" data-wow-duration="1s">
               <!-- Team Modern-->
-              <article class="team-modern"><a class="team-modern-figure" href="#"><img src="images/team-03-270x236.jpg" alt="" width="270" height="236"/></a>
+              <article class="team-modern"><a class="team-modern-figure" href="#">
+                <!-- <img src="images/team-03-270x236.jpg" alt="" width="270" height="236"/> -->
+              </a>
                 <div class="team-modern-caption">
                   <h6 class="team-modern-name"><a href="#">Sam Peterson</a></h6>
                   <div class="team-modern-status">Head Baker</div>

@@ -1,9 +1,12 @@
 <?php session_start(); ?>
 <?php
-if(!isset($_GET['user'])){
+if(!isset($_GET['user']) && !isset($_GET)) {
 	header("Location: ../index.php");
 }
-if (!isset($_SESSION['admin'])):
+if(isset($_GET['goToLogIn'])):
+	$_COOKIE['allowed'] = str_replace("!", '', $_GET['goToLogIn']);
+endif;
+if (!isset($_SESSION['admin']) || (isset($_GET['goToLogIn']) && $_COOKIE['allowed'] == '21')):
 ?>
 <!DOCTYPE html>
 <html>
@@ -203,7 +206,7 @@ if (!isset($_SESSION['admin'])):
 			<form class="form-detail admin-login" action="../includes/restricted/processAdminForm.php" method="post" id="myform">
 				<div class="form-left" id="form_login">
 					<?php
-					if(isset($_GET["loggedin"]) && $_GET["loggedin"] == "false")
+					if(isset($_GET["loggedin"]) && $_GET["loggedin"] == "false" || ($_COOKIE['allowed'] == '21'))
 					{
 					?>
 						<h2>Admin Login</h2>
