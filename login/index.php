@@ -32,7 +32,7 @@ if (!isset($_SESSION['admin']) || (isset($_GET['goToLogIn']) && $_COOKIE['allowe
 		background: #8fb1e7;
 	}
 	.admin-login input.login {
-		padding: 12.5px;
+		padding: 10px;
 		background: #fff;
 		border-radius: 25px;
 		-o-border-radius: 25px;
@@ -197,6 +197,75 @@ if (!isset($_SESSION['admin']) || (isset($_GET['goToLogIn']) && $_COOKIE['allowe
 		left: 0;
 		right: 0;
 	}
+	/* The container */
+	.container-to-restricted-area {
+		display: block;
+		position: relative;
+		padding-left: 35px;
+		margin-bottom: 12px;
+		cursor: pointer;
+		font-size: 22px;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		margin-left: 55px;
+	}
+
+	/* Hide the browser's default checkbox */
+	.container-to-restricted-area-to-restricted-area input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		height: 0;
+		width: 0;
+	}
+
+	/* Create a custom checkbox */
+	.checkmark {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 25px;
+		width: 25px;
+		background-color: #eee;
+	}
+
+	/* On mouse-over, add a grey background color */
+	.container-to-restricted-area-to-restricted-area:hover input ~ .checkmark {
+		background-color: #ccc;
+	}
+
+	/* When the checkbox is checked, add a blue background */
+	.container-to-restricted-area input:checked ~ .checkmark {
+		background-color: #2196F3;
+	}
+
+	/* Create the checkmark/indicator (hidden when not checked) */
+	.checkmark:after {
+		content: "";
+		position: absolute;
+		display: none;
+	}
+
+	/* Show the checkmark when checked */
+	.container-to-restricted-area input:checked ~ .checkmark:after {
+		display: block;
+	}
+
+	/* Style the checkmark/indicator */
+	.container-to-restricted-area .checkmark:after {
+		left: 9px;
+		top: 5px;
+		width: 5px;
+		height: 10px;
+		border: solid white;
+		border-width: 0 3px 3px 0;
+		-webkit-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
+
     </style>
 	<meta name="robots" content="noindex, follow">
 </head>
@@ -218,13 +287,12 @@ if (!isset($_SESSION['admin']) || (isset($_GET['goToLogIn']) && $_COOKIE['allowe
 						<div class="form-row form-row-custom">
 							<input type="password" placeholder="Password" name="password" class="password" id="password" required="true">
 						</div>
-						<div class="form-row-last">
-							<input type="submit" name="login" class="login" value="Login">
-							
-  							<label for="login_admin_restricted_arc" class="login_admin_restricted_arc">
-							  <input type="checkbox" id="login_admin_restricted_arc" name="login_admin_restricted" value="true"></input>
-								<span>Restricted admin area</span>
+						<div class="form-row-last check-mark-container" style="position: relative;">
+							<label class="container-to-restricted-area">Restricted
+								<input type="checkbox" checked="checked">
+								<span class="checkmark"></span>
 							</label>
+							<input type="submit" name="login" class="login" value="Login">
 						</div>
 						<?php
 						if(isset($_GET["user_duplicated"]) && $_GET["user_duplicated"] == "true"){ ?>
@@ -273,7 +341,6 @@ if (!isset($_SESSION['admin']) || (isset($_GET['goToLogIn']) && $_COOKIE['allowe
 		}, 4000);
 	};
 </script>
-<script type="text/javascript" async="" src="./form_colorlib_files/analytics.js.descarga"></script><script async="" src="./form_colorlib_files/js"></script>
 <script>
   if (document.querySelector("#form_registry").classList[1] !== null && document.querySelector("#form_registry").classList[1] !== "")
   {
