@@ -1300,4 +1300,42 @@
 			multitoggles();
 		}
 	});
+
+	if (window.location.href.includes("menu.php") == true) {
+		document.querySelectorAll(".rd-nav-item")[1].classList.remove("active");
+		document.querySelectorAll(".rd-nav-item")[2].classList.add("active");
+		document.querySelectorAll(".rd-nav-item")[3].classList.remove("active");
+	} else if (window.location.href.includes("about-us.php") == true) {
+		document.querySelectorAll(".rd-nav-item")[1].classList.remove("active");
+		document.querySelectorAll(".rd-nav-item")[2].classList.remove("active");
+		document.querySelectorAll(".rd-nav-item")[3].classList.add("active");
+	} else if (window.location.href.includes("orders.php") == true) {
+		document.querySelectorAll(".rd-nav-item")[1].classList.add("active");
+		document.querySelectorAll(".rd-nav-item")[2].classList.remove("active");
+		document.querySelectorAll(".rd-nav-item")[3].classList.remove("active");
+	} else {
+		document.querySelectorAll(".rd-nav-item")[0].classList.add("active");
+	}
 }());
+
+var addRule = (function (style) {
+    var sheet = document.head.appendChild(style).sheet;
+    return function (selector, css) {
+        var propText = typeof css === "string" ? css : Object.keys(css).map(function (p) {
+            return p + ":" + (p === "content" ? "'" + css[p] + "'" : css[p]);
+        }).join(";");
+        sheet.insertRule(selector + "{" + propText + "}", sheet.cssRules.length);
+    };
+})(document.createElement("style"));
+
+addRule(".rd-nav-item.active .rd-navbar-static .rd-nav-link::before", {
+	bottom: 0,
+	height: 6,
+	right: 0,
+    opacity: 1,
+    width: "100%",
+    transition: "right .2s ease, width .2s ease .2s",
+	position: absolute,
+    content: '',
+	background: "#6046b6",
+});
