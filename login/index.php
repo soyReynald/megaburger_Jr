@@ -1,12 +1,7 @@
-<?php session_start(); ?>
-<?php
-if(!isset($_GET['user']) && !isset($_GET)) {
+<?php session_start(); 
+if(isset($_GET) && !isset($_GET['goToLogIn'])) {
 	header("Location: ../index.php");
 }
-if(isset($_GET['goToLogIn'])):
-	$_COOKIE['allowed'] = str_replace("!", '', $_GET['goToLogIn']);
-endif;
-if (!isset($_SESSION['admin']) || (isset($_GET['goToLogIn']) && $_COOKIE['allowed'] == '21')):
 ?>
 <!DOCTYPE html>
 <html>
@@ -275,7 +270,7 @@ if (!isset($_SESSION['admin']) || (isset($_GET['goToLogIn']) && $_COOKIE['allowe
 			<form class="form-detail admin-login" action="../includes/restricted/processAdminForm.php" method="post" id="myform">
 				<div class="form-left" id="form_login">
 					<?php
-					if(isset($_GET["loggedin"]) && $_GET["loggedin"] == "false" || ($_COOKIE['allowed'] == '21'))
+					if(isset($_GET["goToLogIn"]) && (!isset($_GET["loggedin"]) || $_GET["loggedin"] == "false") || !isset($_COOKIE['allowed']) && ($_COOKIE['allowed'] == '21'))
 					{
 					?>
 						<h2>Admin Login</h2>
@@ -324,7 +319,7 @@ if (!isset($_SESSION['admin']) || (isset($_GET['goToLogIn']) && $_COOKIE['allowe
 						?>
 					</div>
 					<?php
-					} 
+					}
 					?>
 				</div>
 				<div class="form-right d-none" id="form_registry">
@@ -479,7 +474,6 @@ gtag('config', 'UA-23581568-13');
 <script src="../menu/js/main.js"></script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) --></html>
 <?php
-	endif;
 	if(isset($_SESSION['admin'])):
 		header("Location: ../admin_area/");
 	endif;
