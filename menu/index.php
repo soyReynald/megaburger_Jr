@@ -6,7 +6,7 @@ $sql = "SELECT * FROM to_menu";
 
 $result = $conn->query($sql);
 
-if (isset($_SESSION['employee_name']) !== null) 
+if (isset($_SESSION['employee_name'])) 
 {
 	@$_SESSION['employee_name'];
 } else {
@@ -82,7 +82,6 @@ if (isset($_SESSION['employee_name']) !== null)
 	<script src="js/popper.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/main.js"></script>
-
 	</body>
 </html>
 
