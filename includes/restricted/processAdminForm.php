@@ -30,9 +30,10 @@ if(isset($password)){
       $hashed_password = password_hash($password, PASSWORD_DEFAULT);
       $_SESSION['admin'] = $row['admin'];
     }
+
     if (password_verify($password, $hashed_password)) {
-      header("Location: ../../login/index.php?loggedin=true&user=".$_POST['user']);
-    } else {
+      header("Location: ../../menu/index.php?loggedin=true&user=".$_POST['user']);
+    } else if (!password_verify($password, $hashed_password)) {
       header("Location: ../../login/index.php?loggedin=false");
     }
   } else {

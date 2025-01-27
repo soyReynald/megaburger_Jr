@@ -1,5 +1,5 @@
 <?php session_start(); 
-if(isset($_GET) && !isset($_GET['goToLogIn'])) {
+if(isset($_GET) && !isset($_GET['goToLogIn']) && !isset($_GET['loggedIn'])) {
 	header("Location: ../index.php");
 }
 ?>
@@ -270,7 +270,7 @@ if(isset($_GET) && !isset($_GET['goToLogIn'])) {
 			<form class="form-detail admin-login" action="../includes/restricted/processAdminForm.php" method="post" id="myform">
 				<div class="form-left" id="form_login">
 					<?php
-					if(isset($_GET["goToLogIn"]) && (!isset($_GET["loggedin"]) || $_GET["loggedin"] == "false") || !isset($_COOKIE['allowed']) && ($_COOKIE['allowed'] == '21'))
+					if(isset($_GET["goToLogIn"]) && (!isset($_GET["loggedin"]) || $_GET["loggedin"] == "false") || !isset($_COOKIE['allowed']))
 					{
 					?>
 						<h2>Admin Login</h2>
@@ -474,7 +474,7 @@ gtag('config', 'UA-23581568-13');
 <script src="../menu/js/main.js"></script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) --></html>
 <?php
-	if(isset($_SESSION['admin'])):
+	if(isset($_SESSION['admin']) && !isset($_GET['goToLogIn'])):
 		header("Location: ../admin_area/");
 	endif;
 	if(!isset($_SESSION)){

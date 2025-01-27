@@ -1,18 +1,21 @@
 <?php
 define('ROOT', 'C:\xampp\htdocs\megaburguer');
 require(ROOT . '\includes\restricted\processAdminForm.php');
+// 4:27 p.m - Date: 27/1/2025
+// Thank you for the help Elephant and Dolphine (ACTUAL animals WHICH saw ME FACE TO FACE)
 
 $sql = "SELECT * FROM to_menu";
 
 $result = $conn->query($sql);
 
-if (isset($_SESSION['employee_name'])) 
+if (isset($_SESSION['employee_name']) && !isset($_SESSION['user_admin'])) 
 {
 	@$_SESSION['employee_name'];
 } else {
-	header("Location: ../index.php");
+	if (!isset($_SESSION['user_admin'])) {
+		header("Location: ../index.php");
+	}
 }
-
 ?>
 <!doctype html>
 <html lang="en">
