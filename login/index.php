@@ -1,8 +1,4 @@
-<?php session_start(); 
-if(isset($_GET) && !isset($_GET['goToLogIn']) && !isset($_GET['loggedIn'])) {
-	header("Location: ../index.php");
-}
-?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
