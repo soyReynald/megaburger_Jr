@@ -1,6 +1,11 @@
 <?php
 define('ROOT', 'C:\xampp\htdocs\megaburguer');
 require(ROOT . '\includes\restricted\processAdminForm.php');
+
+if(!isset($_SESSION) || count($_SESSION) == 0) {
+	header("login.php");
+}
+
 // 4:27 p.m - Date: 27/1/2025
 // Thank you for the help Elephant and Dolphine (ACTUAL animals WHICH saw ME FACE TO FACE)
 
@@ -8,13 +13,9 @@ $sql = "SELECT * FROM to_menu";
 
 $result = $conn->query($sql);
 
-if (isset($_SESSION['employee_name']) && !isset($_SESSION['user_admin'])) 
+if (isset($_SESSION['employee_name']) && !isset($_SESSION['admin'])) 
 {
 	@$_SESSION['employee_name'];
-} else {
-	if (!isset($_SESSION['user_admin'])) {
-		header("Location: ../index.php");
-	}
 }
 ?>
 <!doctype html>
@@ -33,7 +34,7 @@ if (isset($_SESSION['employee_name']) && !isset($_SESSION['user_admin']))
 	</head>
 	<body>
 	<section class="ftco-section">
-	<button type="button" onclick="logout()" class="logout">Logout</button>
+	<button type="button" onclick="logout()" class="logout"><a href="?go=off">Logout</a></button>
 		<div class="container">	
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">

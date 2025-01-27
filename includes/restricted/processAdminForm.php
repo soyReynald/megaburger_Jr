@@ -1,16 +1,7 @@
 <?php 
 session_start();
-$servername = "localhost";
-$username = "root";
-$password = "";
-$db = "hamburguers_bd";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $db);
-
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+include_once('credentials.php');
+ob_start();
 
 if (isset($_POST)) {
   $secret_pass = @$_POST['password'];
@@ -22,7 +13,7 @@ if (isset($_POST)) {
   $result = $conn->query($sql);
 }
 
-if(isset($password)){
+if(isset($password) && !isset($_GET['v'])){
   if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
@@ -32,7 +23,7 @@ if(isset($password)){
     }
 
     if (password_verify($password, $hashed_password)) {
-      header("Location: ../../menu/index.php?loggedin=true&user=".$_POST['user']);
+      header("Location: /megaburguer/menu/index.php?loggedin=true");
     } else if (!password_verify($password, $hashed_password)) {
       header("Location: ../../login/index.php?loggedin=false");
     }
@@ -73,7 +64,7 @@ if(isset($_POST['name']) && isset($_POST['your_email']) && isset($_POST['passwor
 }
 
 // ONLY here
-if (isset($_POST['login_employee'])) 
+if (isset($_POST['login_employee']) && !isset($_GET['v'])) 
 {
   $secret_pass = @$_POST['password'];
   $customer_no = $_POST['customer_no'];
@@ -102,19 +93,21 @@ if (isset($_POST['login_employee']))
   }
 }
 
-if (!isset($_POST['login_employee']) && isset($_POST['login_admin_restricted_arc'])) {
+$data = json_decode(trim(file_get_contents("php://input")));
+if (isset($data) && $data->value == "log_off") { 
   
-} else {
-  $_POST = json_decode(file_get_contents('php://input'), true);
-  if (isset($_POST['value']) && $_POST['value'] == "log_off") {
+  if (isset($data->value) && $data->value == "log_off") {
     if (isset($_SESSION['employee_name'])){
       session_destroy();
     }
     $todo = [
       "value"=> 'go'
     ];
-    echo json_encode($todo);
+    session_destroy();
+    header("Location: ./processAdminForm.php?v=".$todo['value']);
   }  
+} else if ((!isset($_GET) && !$_GET['loggedin']) || (isset($_GET['go']) && @$_GET['go'] == "off")) { 
+  header("Location: /megaburguer/login/index.php?loggedin=false");
 }
 
 ?>

@@ -222,7 +222,7 @@
               <!-- Team Modern-->
               <article class="team-modern"><a class="team-modern-figure" href="#"><img src="images/team-01-270x236.jpg" alt="" width="270" height="236"/></a>
                 <div class="team-modern-caption">
-                  <h6 class="team-modern-name"><a href="#">Richard Peterson</a></h6>
+                  <h6 class="team-modern-name"><a href="#"></a></h6>
                   <div class="team-modern-status">Head Chef</div>
                   <ul class="list-inline team-modern-social-list">
                     <li><a class="icon mdi mdi-facebook" href="#"></a></li>
@@ -269,7 +269,7 @@
               <!-- Team Modern-->
               <article class="team-modern"><a class="team-modern-figure" href="#"><img src="images/team-04-270x236.jpg" alt="" width="270" height="236"/></a>
                 <div class="team-modern-caption">
-                  <h6 class="team-modern-name"><a href="#">Jane Smith</a></h6>
+                  <h6 class="team-modern-name"><a href="#">Reynald Ramirez</a></h6>
                   <div class="team-modern-status">Pizza Chef</div>
                   <ul class="list-inline team-modern-social-list">
                     <li><a class="icon mdi mdi-facebook" href="#"></a></li>
