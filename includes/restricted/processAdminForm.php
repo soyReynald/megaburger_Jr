@@ -94,8 +94,7 @@ if (isset($_POST['login_employee']) && !isset($_GET['v']))
 }
 
 $data = json_decode(trim(file_get_contents("php://input")));
-if (isset($data) && $data->value == "log_off") { 
-  
+if (isset($data) && $data->value == "log_off") {
   if (isset($data->value) && $data->value == "log_off") {
     if (isset($_SESSION['employee_name'])){
       session_destroy();
@@ -108,6 +107,13 @@ if (isset($data) && $data->value == "log_off") {
   }  
 } else if ((!isset($_GET) && !$_GET['loggedin']) || (isset($_GET['go']) && @$_GET['go'] == "off")) { 
   header("Location: /megaburguer/login/index.php?loggedin=false");
+}
+
+if (isset($data) && $data->value == "add_and_remove" && isset($data->id)) {
+  $sql = "UPDATE `to_menu` SET `total_available` = (total_available-1) WHERE `to_menu`.`id_item` = {$data->id}";
+  echo $sql;
+  exit();
+
 }
 
 ?>

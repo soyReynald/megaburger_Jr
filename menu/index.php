@@ -31,6 +31,13 @@ if (isset($_SESSION['employee_name']) && !isset($_SESSION['admin']))
 	
 	<link rel="stylesheet" href="css/style.css">
 
+	<style>
+		a {
+			text-decoration: none;
+			color: white;
+		}
+
+	</style>
 	</head>
 	<body>
 	<section class="ftco-section">
@@ -65,7 +72,7 @@ if (isset($_SESSION['employee_name']) && !isset($_SESSION['admin']))
 										<td>{$row['name_of_item']}</td>
 										<td>{$row['price']}</td>
 										<td>{$row['total_available']}</td>
-										<td><a href='#' class='btn btn-primary'>Select</a></td>
+										<td><a onclick='delete_food_item()' href='?go=add_and_remove&id={$row['id_item']}' class='btn btn-primary'>Select</a></td>
 									</tr>	
 									";
 
