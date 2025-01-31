@@ -111,9 +111,15 @@ if (isset($data) && $data->value == "log_off") {
 
 if (isset($data) && $data->value == "add_and_remove" && isset($data->id)) {
   $sql = "UPDATE `to_menu` SET `total_available` = (total_available-1) WHERE `to_menu`.`id_item` = {$data->id}";
-  echo $sql;
-  exit();
 
+  $result = $conn->query($sql);
+
+  $todo = [
+    "value"=> 'go'
+  ];
+  if ($result) {
+    return $todo['value'];
+  }
 }
 
 ?>
