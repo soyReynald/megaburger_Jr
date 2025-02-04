@@ -110,7 +110,12 @@ if (isset($data) && $data->value == "log_off") {
 }
 
 if (isset($data) && $data->value == "add_and_remove" && isset($data->id)) {
-  $sql = "UPDATE `to_menu` SET `total_available` = (total_available-1) WHERE `to_menu`.`id_item` = {$data->id}";
+
+  if (isset($data->type) && $data->type == "remove_or_unset") {
+    $sql = "UPDATE `to_menu` SET `total_available` = (total_available+1) WHERE `to_menu`.`id_item` = {$data->id}";
+  } else {
+    $sql = "UPDATE `to_menu` SET `total_available` = (total_available-1) WHERE `to_menu`.`id_item` = {$data->id}";
+  }
 
   $result = $conn->query($sql);
 

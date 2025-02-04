@@ -72,7 +72,7 @@ if (isset($_SESSION['employee_name']) && !isset($_SESSION['admin']))
 										<td>{$row['name_of_item']}</td>
 										<td>{$row['price']}</td>
 										<td>{$row['total_available']}</td>
-										<td><a onclick='delete_food_item()' href='?go=add_and_remove&id={$row['id_item']}' class='btn btn-primary'>Select</a></td>
+										<td><a onclick='delete_food_item()' href='?go=add_and_remove&id={$row['id_item']}' class='btn btn-primary'>Select</a> &nbsp; <a onclick='delete_food_item()' href='?go=add_and_remove&id={$row['id_item']}&type=remove_or_unset' class='btn btn-danger'>Un Select</a></td>
 									</tr>	
 									";
 

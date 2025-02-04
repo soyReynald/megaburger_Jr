@@ -17,7 +17,13 @@ async function logout() {
 
 async function add_and_remove(id) {
 	let data = {"value": "add_and_remove", "id": id};
-	return fetch("RESTRICTEDReceiverFile.php", {
+	
+	if (document.location.href.slice(43).includes("remove_or_unset")) {
+		id = data.id.replace("&type=remove_or_unset", "");
+		data = {"value": "add_and_remove", "id": id, "type": "remove_or_unset"};
+	}
+
+	return fetch("../includes/restricted/processAdminForm.php", {
 		method: 'POST',
 		body: JSON.stringify(data),
 		headers: {
