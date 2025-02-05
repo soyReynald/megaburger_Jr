@@ -20,6 +20,7 @@ if(isset($password) && !isset($_GET['v'])){
       $password = $row['password'];
       $hashed_password = password_hash($password, PASSWORD_DEFAULT);
       $_SESSION['admin'] = $row['admin'];
+      $_SESSION['adult_password'] = $row['password'];
     }
 
     if (password_verify($password, $hashed_password)) {
@@ -96,9 +97,6 @@ if (isset($_POST['login_employee']) && !isset($_GET['v']))
 $data = json_decode(trim(file_get_contents("php://input")));
 if (isset($data) && $data->value == "log_off") {
   if (isset($data->value) && $data->value == "log_off") {
-    if (isset($_SESSION['employee_name'])){
-      session_destroy();
-    }
     $todo = [
       "value"=> 'go'
     ];

@@ -8,14 +8,22 @@ if(!isset($_SESSION) || count($_SESSION) == 0) {
 
 // 4:27 p.m - Date: 27/1/2025
 // Thank you for the help Elephant and Dolphine (ACTUAL animals WHICH saw ME FACE TO FACE)
-
-$sql = "SELECT * FROM to_menu";
-
-$result = $conn->query($sql);
-
 if (isset($_SESSION['employee_name']) && !isset($_SESSION['admin'])) 
 {
 	@$_SESSION['employee_name'];
+}
+
+
+// test truthful user // So you are not going BECAUSE you are an adult. Att: Jesus Christ.
+if(isset($_SESSION) && isset($_SESSION['admin']) && isset($_SESSION['adult_password'])) {
+	$sql = "SELECT * FROM users WHERE admin = {$_SESSION['admin']}";
+	$result = $conn->query($sql);
+} 
+if (sizeof($_SESSION, 0) <= 0){
+	header("Location: ../login/");
+} else {
+	$sql = "SELECT * FROM to_menu";
+	$result = $conn->query($sql);
 }
 ?>
 <!doctype html>
