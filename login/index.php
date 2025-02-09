@@ -470,8 +470,13 @@ gtag('js', new Date());
 gtag('config', 'UA-23581568-13');
 
 </script>
-<script defer="" src="./form_colorlib_files/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;8e7b65e8ee1d1375&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2024.10.5&quot;,&quot;token&quot;:&quot;cd0b4b3a733644fc843ef0b185f98241&quot;}" crossorigin="anonymous"></script>
 <script src="../menu/js/main.js"></script>
+<script src="./resources/resources.js"></script>
+<script type="text/javascript">
+	document.querySelector(".container-to-restricted-area").onclick = function(e) {
+		hasAfter(".container-to-restricted-area > span.checkmark");
+	};
+</script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) --></html>
 <?php
 	if(isset($_SESSION['admin']) && !isset($_GET['goToLogIn'])):

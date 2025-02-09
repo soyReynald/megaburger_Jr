@@ -16,7 +16,7 @@ if (isset($_SESSION['employee_name']) && !isset($_SESSION['admin']))
 
 // test truthful user // So you are not going BECAUSE you are an adult. Att: Jesus Christ.
 if(isset($_SESSION) && isset($_SESSION['admin']) && isset($_SESSION['adult_password'])) {
-	$sql = "SELECT * FROM users WHERE admin = {$_SESSION['admin']}";
+	$sql = "SELECT * FROM users WHERE user_nick = {$_SESSION['admin']}";
 	$result = $conn->query($sql);
 } 
 if (sizeof($_SESSION, 0) <= 0){

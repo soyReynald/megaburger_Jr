@@ -8,7 +8,7 @@ if (isset($_POST)) {
 
   $password = $secret_pass;
   
-  $sql = "SELECT admin, password FROM users";
+  $sql = "SELECT user_nick, password FROM users";
   
   $result = $conn->query($sql);
 }
