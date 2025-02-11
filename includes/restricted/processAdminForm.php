@@ -97,6 +97,7 @@ if (isset($_POST['login_employee']) && !isset($_GET['v']))
   }
 }
 
+$data = json_decode(trim(file_get_contents("php://input")));
 if (isset($data) && $data->value == "log_off") { 
   
   if (isset($data->value) && $data->value == "log_off") {
