@@ -8,15 +8,15 @@ if(!isset($_SESSION) || count($_SESSION) == 0) {
 
 // 4:27 p.m - Date: 27/1/2025
 // Thank you for the help Elephant and Dolphine (ACTUAL animals WHICH saw ME FACE TO FACE)
-if (isset($_SESSION['employee_name']) && !isset($_SESSION['admin'])) 
+if (isset($_SESSION['employee_name']) && !isset($_SESSION['user_nick'])) 
 {
 	@$_SESSION['employee_name'];
 }
 
 
 // test truthful user // So you are not going BECAUSE you are an adult. Att: Jesus Christ.
-if(isset($_SESSION) && isset($_SESSION['admin']) && isset($_SESSION['adult_password'])) {
-	$sql = "SELECT * FROM users WHERE user_nick = {$_SESSION['admin']}";
+if(isset($_SESSION) && isset($_SESSION['user_nick']) && isset($_SESSION['password'])) {
+	$sql = "SELECT * FROM users WHERE user_nick = {$_SESSION['user_nick']}";
 	$result = $conn->query($sql);
 } 
 if (sizeof($_SESSION, 0) <= 0){

@@ -307,7 +307,7 @@ if(isset($_GET) && !isset($_GET['goToLogIn']) && !isset($_GET['loggedIn'])) {
 						<?php 
 							if($_GET['user'] != 'undefined')
 							{
-								echo "<h2> Welcome Admin.:".@$_SESSION['admin']."</h2>";
+								echo "<h2> Welcome Admin.:".@$_SESSION['user_nick']."</h2>";
 								echo '
 								<span style="margin-left: 6%" class="switch-title">Switch to LOG IN an Employee with the right.</span>
 								<br/>
@@ -330,9 +330,13 @@ if(isset($_GET) && !isset($_GET['goToLogIn']) && !isset($_GET['loggedIn'])) {
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script type="text/javascript">
 	let itemToHide = document.querySelector(".notice.danger");
-	if(window.location.href.includes("user_duplicated") == true) {
+	if(window.location.href.includes("user_duplicated") == true || hasAfter(".container-to-restricted-area > span.checkmark")) {
 		setTimeout(() => {
-			itemToHide.style.display = "none";
+			if(!hasAfter(".container-to-restricted-area > span.checkmark")){
+				itemToHide.style.display = "none";
+			} else {
+				alert("is restricted user");
+			}
 		}, 4000);
 	};
 </script>
@@ -418,7 +422,7 @@ function turnLoginOn() {
 		btn_for_login.setAttribute("value", "Login");
 		btn_for_login.setAttribute("class", "login");
 		
-		if(checkbox_2.checked) {
+		if(hasAfter(".container-to-restricted-area > span.checkmark")) {
 			btn_for_login.setAttribute("name", "login_admin_restricted_arc");
 		} else {
 			btn_for_login.setAttribute("name", "login_employee");
@@ -472,14 +476,9 @@ gtag('config', 'UA-23581568-13');
 </script>
 <script src="../menu/js/main.js"></script>
 <script src="./resources/resources.js"></script>
-<script type="text/javascript">
-	document.querySelector(".container-to-restricted-area").onclick = function(e) {
-		hasAfter(".container-to-restricted-area > span.checkmark");
-	};
-</script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) --></html>
 <?php
-	if(isset($_SESSION['admin']) && !isset($_GET['goToLogIn'])):
+	if(isset($_SESSION['user_nick']) && !isset($_GET['goToLogIn'])):
 		header("Location: ../admin_area/");
 	endif;
 	if(!isset($_SESSION)){

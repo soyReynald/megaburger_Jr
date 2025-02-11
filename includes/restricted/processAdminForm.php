@@ -3,35 +3,35 @@ session_start();
 include_once('credentials.php');
 ob_start();
 
-if (isset($_POST)) {
+if (isset($_POST) && isset($_POST['user'])) {
   $secret_pass = @$_POST['password'];
-
-  $password = $secret_pass;
-  
-  $sql = "SELECT user_nick, password FROM users";
-  
+  $_user = @$_POST['user'];
+  $password = password_hash($secret_pass, PASSWORD_DEFAULT);
+  $sql = "SELECT user_nick, password FROM users WHERE user_nick LIKE '$_user'";
   $result = $conn->query($sql);
-}
-
-if(isset($password) && !isset($_GET['v'])){
-  if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-      $password = $row['password'];
-      $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-      $_SESSION['admin'] = $row['admin'];
-      $_SESSION['adult_password'] = $row['password'];
+  
+  if(isset($password) && !isset($_GET['v'])){
+    if ($result->num_rows > 0) {
+      // output data of each row
+      while($row = $result->fetch_assoc()) {
+        $password = $row['password'];
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        $_SESSION['user_nick'] = $row['user_nick'];
+        $_SESSION['password'] = $row['password'];
+      }
+      
+      if (password_verify($password, $hashed_password)) {
+        header("Location: /megaburguer/menu/index.php?loggedin=true");
+      } else if (!password_verify($password, $hashed_password)) {
+        header("Location: ../../login/index.php?loggedin=false");
+      }
+    } else {
+      echo "0 results";
     }
-
-    if (password_verify($password, $hashed_password)) {
-      header("Location: /megaburguer/menu/index.php?loggedin=true");
-    } else if (!password_verify($password, $hashed_password)) {
-      header("Location: ../../login/index.php?loggedin=false");
-    }
-  } else {
-    echo "0 results";
   }
 }
+
+
 
 if(isset($_POST['name']) && isset($_POST['your_email']) && isset($_POST['password_employee']) && isset($_POST['customer_no']) && !isset($_POST['login_employee'])) 
 {
@@ -41,7 +41,7 @@ if(isset($_POST['name']) && isset($_POST['your_email']) && isset($_POST['passwor
   $hashed_password = password_hash($password, PASSWORD_DEFAULT);
   $customer_no = $_POST['customer_no'];
 
-  $sqlToTest = "SELECT employee_email, password FROM employee WHERE employee_email = '{$email}'";
+  $sqlToTest = "SELECT employee_email, password FROM employee WHERE employee_email = '{$email}' AND password = '{$password}'";
   $result = $conn->query($sql);
   
   if ($result->num_rows > 0) {
@@ -94,7 +94,6 @@ if (isset($_POST['login_employee']) && !isset($_GET['v']))
   }
 }
 
-$data = json_decode(trim(file_get_contents("php://input")));
 if (isset($data) && $data->value == "log_off") {
   if (isset($data->value) && $data->value == "log_off") {
     $todo = [
@@ -107,8 +106,8 @@ if (isset($data) && $data->value == "log_off") {
   header("Location: /megaburguer/login/index.php?loggedin=false");
 }
 
+$data = json_decode(trim(file_get_contents("php://input")));
 if (isset($data) && $data->value == "add_and_remove" && isset($data->id)) {
-
   if (isset($data->type) && $data->type == "remove_or_unset") {
     $sql = "UPDATE `to_menu` SET `total_available` = (total_available+1) WHERE `to_menu`.`id_item` = {$data->id}";
   } else {

@@ -1,7 +1,7 @@
 <?php
 session_start();
 $allowed_momentary_by_jah = $_GET['admin_from_christ'];
-if (isset($_SESSION['admin']) || $_GET['admin_from_christ'] == "true"):
+if (isset($_SESSION['user_nick']) || $_GET['admin_from_christ'] == "true"):
 ?>
 <!DOCTYPE html>
 <html lang="en">
