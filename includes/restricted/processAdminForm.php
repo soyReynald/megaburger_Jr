@@ -7,7 +7,7 @@ if (isset($_POST) && isset($_POST['user']) && isset($_POST['password'])) {
   $_user = @$_POST['user'];
   $secret_pass = @$_POST['password'];
 
-  $password_from_user = $conn->mysqli_real_scape_string($secret_pass);
+  $password_from_user = $conn->real_escape_string($secret_pass);
   
   $sql = "SELECT user_nick, password FROM users WHERE user_nick = '$_user' AND password = SHA1('$secret_pass')";
   
