@@ -287,10 +287,9 @@ if(isset($_GET) && !isset($_GET['goToLogIn']) && !isset($_GET['loggedIn'])) {
 								<input type="checkbox" checked="checked">
 								<span class="checkmark"></span>
 							</label>
-							<input type="submit" name="login" class="login" value="Login">
+							<input type="submit" name="login" id="loginUser" class="login" value="Login">
 						</div>
-						<?php
-						if(isset($_GET["user_duplicated"]) && $_GET["user_duplicated"] == "true"){ ?>
+						<?php if(isset($_GET["user_duplicated"]) && $_GET["user_duplicated"] == "true") { ?>
 							<div class="notice danger">
 								<div class="notice-title">DANGER</div>
 								<p>The user which you tried to create, is already created.</p>
@@ -329,14 +328,27 @@ if(isset($_GET) && !isset($_GET['goToLogIn']) && !isset($_GET['loggedIn'])) {
 	</div>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script type="text/javascript">
-	let itemToHide = document.querySelector(".notice.danger");
-	if(window.location.href.includes("user_duplicated") == true || hasAfter(".container-to-restricted-area > span.checkmark")) {
-		setTimeout(() => {
-			if(!hasAfter(".container-to-restricted-area > span.checkmark")){
-				itemToHide.style.display = "none";
+	window.addEventListener("load", function() {
+		var button = document.querySelector("#form_login > div.form-row-last.check-mark-container > label > input[type=checkbox]");
+		button.addEventListener("change", function(event){
+			if (document.querySelector("#form_login > div.form-row-last.check-mark-container > label > input[type=checkbox]").checked == false && document.location.href.includes("?!restrictedUse")) {
+				document.location.href.replace("?!restrictedUse", "");
+				document.querySelector("#form_login > div.form-row-last.check-mark-container > label > input[type=checkbox]").checked = false
+				document.location.href = "http://localhost/megaburguer/login/index.php?goToLogIn=!21";
+			} else if(!document.location.href.includes("?!restrictedUse")) {
+				document.location.href += "?!restrictedUse";
+				document.querySelector("#form_login > div.form-row-last.check-mark-container > label > input[type=checkbox]").checked = false;
 			} else {
-				alert("is restricted user");
+				document.location.href.replace("?!restrictedUse", "");
+				document.location.href = "http://localhost/megaburguer/login/index.php?goToLogIn=!21";
 			}
+		});
+	});
+
+	let itemToHide = document.querySelector(".notice.danger");
+	if(window.location.href.includes("user_duplicated") == true) {
+		setTimeout(() => {
+			itemToHide.style.display = "none";
 		}, 4000);
 	};
 </script>
