@@ -22,7 +22,7 @@ if(isset($_SESSION) && isset($_SESSION['user_nick']) && isset($_SESSION['passwor
 if (sizeof($_SESSION, 0) <= 0){
 	header("Location: ../login/");
 } else {
-	$sql = "SELECT * FROM to_menu";
+	$sql = "SELECT * FROM users";
 	$result = $conn->query($sql);
 }
 ?>
@@ -77,10 +77,8 @@ if (sizeof($_SESSION, 0) <= 0){
 						<table class="table">
 					    <thead class="thead-primary">
 					      <tr>
-					        <th>Item ID</th>
-					        <th>Name of Item</th>
-							<th>Price</th>
-							<th>Total available</th>
+					        <th>User ID</th>
+					        <th>User name</th>
 					      </tr>
 					    </thead>
 					    <tbody>
@@ -90,11 +88,10 @@ if (sizeof($_SESSION, 0) <= 0){
 								while($row = $result->fetch_assoc()) {
 									echo "
 									<tr>
-										<th scope='row' class='scope'>{$row['id_item']}</th>
-										<td>{$row['name_of_item']}</td>
-										<td>{$row['price']}</td>
-										<td>{$row['total_available']}</td>
-										<td><a onclick='delete_food_item()' href='?go=add_and_remove&id={$row['id_item']}' class='btn btn-primary'>Select</a> &nbsp; <a onclick='delete_food_item()' href='?go=add_and_remove&id={$row['id_item']}&type=remove_or_unset' class='btn btn-danger'>Unselect</a></td>
+										<th scope='row' class='scope'>{$row['id']}</th>
+										<td>{$row['user_nick']}</td>
+
+										<td><a onclick='delete_food_item()' href='?go=add_and_remove_user&id={$row['id']}' class='btn btn-primary'>Select</a> &nbsp; <a onclick='delete_food_item()' href='?go=add_and_remove&id={$row['id']}&type=remove_or_unset' class='btn btn-danger'>Unselect</a></td>
 									</tr>	
 									";
 

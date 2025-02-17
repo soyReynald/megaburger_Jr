@@ -330,7 +330,7 @@ if(isset($_GET) && !isset($_GET['goToLogIn']) && !isset($_GET['loggedIn'])) {
 <script type="text/javascript">
 	window.addEventListener("load", function() {
 		var button = document.querySelector("#form_login > div.form-row-last.check-mark-container > label > input[type=checkbox]");
-		button.addEventListener("change", function(event){
+		button.addEventListener("change", function(event) {
 			if (document.querySelector("#form_login > div.form-row-last.check-mark-container > label > input[type=checkbox]").checked == false && document.location.href.includes("?!restrictedUse")) {
 				document.location.href.replace("?!restrictedUse", "");
 				document.querySelector("#form_login > div.form-row-last.check-mark-container > label > input[type=checkbox]").checked = false

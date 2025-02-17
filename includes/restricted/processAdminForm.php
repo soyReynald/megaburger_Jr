@@ -114,4 +114,34 @@ if (isset($data) && $data->value == "log_off") {
   header("Location: /megaburguer/login/index.php?loggedin=false");
 }
 
+if ((isset($_GET['go'])) && ((isset($_GET) &&  $_GET['go'] == "add_and_remove" && $_GET['type'] != "remove_or_unset") || (isset($_GET) &&  $_GET['type'] == "remove_or_unset")) )  {
+  if ($_GET['type'] == "remove_or_unset") {
+    $sql = "UPDATE `to_menu` SET `total_available` = (total_available+1) WHERE `to_menu`.`id_item` = {$_GET['id']}";
+  } else if ($_GET['go'] == "add_and_remove") {
+    $sql = "UPDATE `to_menu` SET `total_available` = (total_available-1) WHERE `to_menu`.`id_item` = {$_GET['id']}";
+  }
+
+  $result = $conn->query($sql);
+
+  $todo = [
+    "value"=> 'go'
+  ];
+  if ($result) {
+    return $todo['value'];
+  }
+}
+
+if (isset($data) && $data->value == "add_and_remove_user" && isset($data->id)) {
+  $sql = "DELETE FROM `users` WHERE `users`.`id` = {$data->id}";
+
+  $result = $conn->query($sql);
+
+  $todo = [
+    "value"=> 'go'
+  ];
+  if ($result) {
+    return $todo['value'];
+  }
+}
+
 ?>
