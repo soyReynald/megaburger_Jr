@@ -56,6 +56,12 @@ if (sizeof($_SESSION, 0) <= 0){
 			font-size: 12pt;
 			margin-top: 5%;
 		}
+
+		body {
+			background-image: url("images/background_img.jpg");
+			background-position: cover;
+			background-size: cover;
+		}
 	</style>
 	</head>
 	<body>
@@ -63,7 +69,7 @@ if (sizeof($_SESSION, 0) <= 0){
 	
 	<button type="button" onclick="logout()" class="logout"><a href="?go=off">Logout</a></button>
 	<div class="container">	
-			<a href="../users_area/?admin_from_christ=true" class="btn btn-info users_info_btn">Go to users</a>
+			<a href="../users_area/?admin_from_christ=true" class="btn btn-info users_info_btn">Extra button</a>
 			<a href="../admin_area/?admin_from_christ=true" class="btn btn-success add_burguer">Add a new burguer</a>
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
@@ -72,7 +78,7 @@ if (sizeof($_SESSION, 0) <= 0){
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<h4 class="text-center mb-4">Choose what the customer wants / Selecciona lo que el cliente desea</h4>
+					<h4 class="text-center mb-4">Choose what the users want / Selecciona lo que el usuario desea</h4>
 					<div class="table-wrap">
 						<table class="table">
 					    <thead class="thead-primary">
