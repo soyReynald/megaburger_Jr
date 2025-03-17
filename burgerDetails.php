@@ -3,19 +3,22 @@
       <?php
         if (isset($_GET['item_id'])) {
           $ID_item = $conn->real_escape_string($_GET['item_id']);
-          $sql = "SELECT name_of_item, image_url FROM to_menu WHERE id_item = '{$ID_item}'";
+          $sql = "SELECT name_of_item, img_product FROM to_menu WHERE id_item = '{$ID_item}'";
           $result = $conn->query($sql);
   
+          $imageUrl = "";
           if ($result->num_rows > 0) {
             // output data of each row
               while($row = $result->fetch_assoc()) {
                 $titleOfItem = $row['name_of_item'];
-                $imageUrl = $row['image_url'];
+                $imageUrl = $row['img_product'];
               }
           }
         } else {
           header("Location: /index.php?item=not_found");
         }
+
+        echo $imageUrl;
         ?>
       <section class="section section-md bg-default">
         <div class="container">

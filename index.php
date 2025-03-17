@@ -64,7 +64,7 @@
                   <div class="col-sm-6 col-lg-4">
                     <div class="oh-desktop">
                       <article class="services-terri wow slideInUp">
-                        <div class="services-terri-figure"><a href="/megaburguer/burgerDetails.php?item_id=<?= $row['id_item']; ?>"><img src="./<?= $row['image_url']; ?>" alt="" width="370" height="278"/></a>
+                        <div class="services-terri-figure"><a href="/megaburguer/burgerDetails.php?item_id=<?= $row['id_item']; ?>"><img src="./<?= $row['img_product']; ?>" alt="" width="370" height="278"/></a>
                         </div>
                         <div class="services-terri-figure"><h5><?= $row['name_of_item'] ?></h5></div>
                       </article>
@@ -96,7 +96,7 @@
             <div class="col-sm-6 col-lg-4 col-xl-3">
               <!-- Product-->
               <article class="product wow fadeInLeft" data-wow-delay=".15s">
-                <div class="product-figure"><img src="./<?= $row2['image_url']; ?>" alt="" width="161" height="162"/>
+                <div class="product-figure"><img src="./<?= $row2['img_product']; ?>" alt="" width="161" height="162"/>
                 </div>
                 <div class="product-rating"><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star text-gray-13"></span>
                 </div>

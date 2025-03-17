@@ -17,7 +17,7 @@
               <div class="col-sm-6 col-lg-4">
                   <div class="oh-desktop">
                     <article class="services-terri wow slideInUp">
-                      <div class="services-terri-figure"><a href="burgerDetails.php?item_id=<?= $conn->real_escape_string($row['id_item']); ?>"><img src="<?= $conn->real_escape_string($row['image_url']); ?>" alt="" width="370" height="278"/></a>
+                      <div class="services-terri-figure"><a href="burgerDetails.php?item_id=<?= $conn->real_escape_string($row['id_item']); ?>"><img src="<?= $conn->real_escape_string($row['img_product']); ?>" alt="" width="370" height="278"/></a>
                       </div>
                       <div class="services-terri-figure"><h5><?= $conn->real_escape_string($row['name_of_item']); ?></h5></div>
                     </article>
