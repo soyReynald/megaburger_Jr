@@ -64,7 +64,7 @@
                   <div class="col-sm-6 col-lg-4">
                     <div class="oh-desktop">
                       <article class="services-terri wow slideInUp">
-                        <div class="services-terri-figure"><a href="/megaburguer/burgerDetails.php?item_id=<?= $row['id_item']; ?>"><img src="./<?= $row['img_product']; ?>" alt="" width="370" height="278"/></a>
+                        <div class="services-terri-figure"><a href="/megaburguer/burgerDetails.php?item_id=<?= $row['id_item']; ?>"><img src="./admin_area/<?= $row['img_product']; ?>" alt="" width="370" height="278"/></a>
                         </div>
                         <div class="services-terri-figure"><h5><?= $row['name_of_item'] ?></h5></div>
                       </article>

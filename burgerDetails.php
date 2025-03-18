@@ -17,8 +17,6 @@
         } else {
           header("Location: /index.php?item=not_found");
         }
-
-        echo $imageUrl;
         ?>
       <section class="section section-md bg-default">
         <div class="container">
@@ -28,7 +26,7 @@
               <div class="oh-desktop">
                 <!-- Services Terri-->
                 <article>
-                  <div><img src="<?= $imageUrl ?>" alt="" width="370" height="278"/></div>
+                  <div><img src="<?= "./admin_area/{$imageUrl} ?>" alt="" width="370" height="278"/></div>
                 </article>
               </div>
             </div>
