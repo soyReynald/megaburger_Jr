@@ -79,44 +79,6 @@
           </div>
         </div>
       </section>
-      <!-- Special selection -->
-      <section class="section section-lg bg-default">
-        <div class="container">
-          <h3 class="oh-desktop"><span class="d-inline-block wow slideInUp">Selected Burgers</span></h3>
-          <div class="row row-lg row-30">
-            <?php 
-            // Fix here, was not actually updated
-            $sql = "SELECT * FROM to_menu LIMIT 4";
-            $result = $conn->query($sql);     
-            if ($result->num_rows > 0) {
-              // output data of each row
-              while($row2 = $result->fetch_assoc()):
-
-            ?>
-            <div class="col-sm-6 col-lg-4 col-xl-3">
-              <!-- Product-->
-              <article class="product wow fadeInLeft" data-wow-delay=".15s">
-                <div class="product-figure"><img src="./<?= $row2['img_product']; ?>" alt="" width="161" height="162"/>
-                </div>
-                <div class="product-rating"><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star text-gray-13"></span>
-                </div>
-                <h6 class="product-title"><?= $row2['name_of_item']; ?></h6>
-                <div class="product-price-wrap">
-                  <div class="product-price">$ <?= $row2['price']; ?></div>
-                </div>
-                <div class="product-button">
-                  <div class="button-wrap"><a class="button button-xs button-primary button-winona" href="#">Add to cart</a></div>
-                  <div class="button-wrap"><a class="button button-xs button-secondary button-winona" href="/megaburguer/burgerDetails.php?item_id=<?= $row2['id_item']; ?>">View Product</a></div>
-                </div>
-              </article>
-            </div>  
-            <?php
-              endwhile;
-            }
-            ?>
-          </div>
-        </div>
-      </section>
 
       <!-- What People Say ***** -->
        <!-- Our Team-->
@@ -126,7 +88,10 @@
           <div class="row row-lg row-40 justify-content-center">
             <div class="col-sm-6 col-lg-3 wow fadeInLeft" data-wow-delay=".2s" data-wow-duration="1s">
               <!-- Team Modern-->
-              <article class="team-modern"><a class="team-modern-figure" href="#"><img src="images/team-01-270x236.jpg" alt="" width="270" height="236"/></a>
+              <article class="team-modern"><a class="team-modern-figure" href="#">
+                <!-- <img src="images/#" alt="" width="270" height="236"/> -->
+              </a>
+              <!-- WHO IS ASKING QUESTIONS WITHOUT UNDERSTANDING? -->
                 <div class="team-modern-caption">
                   <h6 class="team-modern-name"><a href="#">Robert Powell</a></h6>
                   <div class="team-modern-status">Head Chef</div>
@@ -141,7 +106,9 @@
             </div>
             <div class="col-sm-6 col-lg-3 wow fadeInLeft" data-wow-delay="0s" data-wow-duration="1s">
               <!-- Team Modern-->
-              <article class="team-modern"><a class="team-modern-figure" href="#"><img src="images/team-02-270x236.jpg" alt="" width="270" height="236"/></a>
+              <article class="team-modern"><a class="team-modern-figure" href="#">
+                <!-- <img src="images/#" alt="" width="270" height="236"/> -->
+              </a>
                 <div class="team-modern-caption">
                   <h6 class="team-modern-name"><a href="#">Amelia Liang</a></h6>
                   <div class="team-modern-status">Manager</div>
@@ -160,7 +127,7 @@
                 <!-- <img src="images/team-03-270x236.jpg" alt="" width="270" height="236"/> -->
               </a>
                 <div class="team-modern-caption">
-                  <h6 class="team-modern-name"><a href="#">Max Cutnicky</a></h6>
+                  <h6 class="team-modern-name"><a href="#">A non known girl name</a></h6>
                   <div class="team-modern-status">Head Baker</div>
                   <ul class="list-inline team-modern-social-list">
                     <li><a class="icon mdi mdi-facebook" href="#"></a></li>
@@ -173,7 +140,9 @@
             </div>
             <div class="col-sm-6 col-lg-3 wow fadeInRight" data-wow-delay=".3s" data-wow-duration="1s">
               <!-- Team Modern-->
-              <article class="team-modern"><a class="team-modern-figure" href="#"><img src="images/team-04-270x236.jpg" alt="" width="270" height="236"/></a>
+              <article class="team-modern"><a class="team-modern-figure" href="#">
+                <!-- <img src="images/#" alt="" width="270" height="236"/> -->
+              </a>
                 <div class="team-modern-caption">
                   <h6 class="team-modern-name"><a href="#">Reyo Ramirez</a></h6>
                   <div class="team-modern-status">Pizza Chef</div>

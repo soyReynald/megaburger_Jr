@@ -26,7 +26,7 @@
               <div class="oh-desktop">
                 <!-- Services Terri-->
                 <article>
-                  <div><img src="<?= "./admin_area/{$imageUrl} ?>" alt="" width="370" height="278"/></div>
+                  <div><img src="<?php echo './admin_area/{$imageUrl}'; ?>" alt="" width="370" height="278"/></div>
                 </article>
               </div>
             </div>
