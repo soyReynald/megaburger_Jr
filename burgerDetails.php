@@ -1,5 +1,13 @@
 <?php include_once("includes/restricted/header.php"); ?>
       <!-- What We Offer-->
+      <!--
+        Should not I have mercy
+        on these people whence they
+        don't know how to distinguish;
+        Their right hand nor left FROM them?.
+
+        Book of Johah in Holy Scriptures.
+      --->
       <?php
         if (isset($_GET['item_id'])) {
           $ID_item = $conn->real_escape_string($_GET['item_id']);
@@ -15,7 +23,8 @@
               }
           }
         } else {
-          header("Location: /index.php?item=not_found");
+          define('ROOT', 'http://localhost/megaburguer');
+          header("Location: ". ROOT . "/index.php?item=not_found");
         }
         ?>
       <section class="section section-md bg-default">

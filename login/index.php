@@ -284,7 +284,7 @@ if(isset($_GET) && !isset($_GET['goToLogIn']) && !isset($_GET['loggedIn'])) {
 						</div>
 						<div class="form-row-last check-mark-container" style="position: relative;">
 							<label class="container-to-restricted-area">Restricted
-								<input type="checkbox" checked="checked">
+								<input type="checkbox" id="checkBoxToCheck">
 								<span class="checkmark"></span>
 							</label>
 							<input type="submit" name="login" id="loginUser" class="login" value="Login">
@@ -331,17 +331,16 @@ if(isset($_GET) && !isset($_GET['goToLogIn']) && !isset($_GET['loggedIn'])) {
 	window.addEventListener("load", function() {
 		var button = document.querySelector("#form_login > div.form-row-last.check-mark-container > label > input[type=checkbox]");
 		button.addEventListener("change", function(event) {
-			if (document.querySelector("#form_login > div.form-row-last.check-mark-container > label > input[type=checkbox]").checked == false && document.location.href.includes("?!restrictedUse")) {
-				document.location.href.replace("?!restrictedUse", "");
-				document.querySelector("#form_login > div.form-row-last.check-mark-container > label > input[type=checkbox]").checked = false
-				document.location.href = "http://localhost/megaburguer/login/index.php?goToLogIn=!21";
-			} else if(!document.location.href.includes("?!restrictedUse")) {
-				document.location.href += "?!restrictedUse";
-				document.querySelector("#form_login > div.form-row-last.check-mark-container > label > input[type=checkbox]").checked = false;
-			} else {
-				document.location.href.replace("?!restrictedUse", "");
-				document.location.href = "http://localhost/megaburguer/login/index.php?goToLogIn=!21";
-			}
+			setTimeout(() => {
+				if (document.location.href.includes("?!restrictedUse") == true) {
+					document.querySelector("#checkBoxToCheck").checked = true;
+				} else if (document.location.href.includes("?!restrictedUse") == false) {
+					document.querySelector("#checkBoxToCheck").checked = false;
+				}
+			}, "1000");
+			if (document.location.href.includes("?!restrictedUse") == false) {
+					document.location.href.replace("!21", "restrictedUse");
+				}
 		});
 	});
 

@@ -93,7 +93,7 @@
               </a>
               <!-- WHO IS ASKING QUESTIONS WITHOUT UNDERSTANDING? -->
                 <div class="team-modern-caption">
-                  <h6 class="team-modern-name"><a href="#">Robert Powell</a></h6>
+                  <h6 class="team-modern-name"><a href="#">Robert K.</a></h6>
                   <div class="team-modern-status">Head Chef</div>
                   <ul class="list-inline team-modern-social-list">
                     <li><a class="icon mdi mdi-facebook" href="#"></a></li>
@@ -144,7 +144,7 @@
                 <!-- <img src="images/#" alt="" width="270" height="236"/> -->
               </a>
                 <div class="team-modern-caption">
-                  <h6 class="team-modern-name"><a href="#">Reyo Ramirez</a></h6>
+                  <h6 class="team-modern-name"><a href="#">Sr. Ramirez</a></h6>
                   <div class="team-modern-status">Pizza Chef</div>
                   <ul class="list-inline team-modern-social-list">
                     <li><a class="icon mdi mdi-facebook" href="#"></a></li>
