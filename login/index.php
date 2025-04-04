@@ -284,7 +284,8 @@ if(isset($_GET) && !isset($_GET['goToLogIn']) && !isset($_GET['loggedIn'])) {
 						</div>
 						<div class="form-row-last check-mark-container" style="position: relative;">
 							<label class="container-to-restricted-area">Restricted
-								<input type="checkbox" id="checkBoxToCheck">
+								<input type="checkbox" id="checkBoxToCheck" name="restricted">
+								<!-- If is truth, then IS counted as restricted, is null (not truth), then is a normal user -->
 								<span class="checkmark"></span>
 							</label>
 							<input type="submit" name="login" id="loginUser" class="login" value="Login">
@@ -328,21 +329,21 @@ if(isset($_GET) && !isset($_GET['goToLogIn']) && !isset($_GET['loggedIn'])) {
 	</div>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script type="text/javascript">
-	window.addEventListener("load", function() {
-		var button = document.querySelector("#form_login > div.form-row-last.check-mark-container > label > input[type=checkbox]");
-		button.addEventListener("change", function(event) {
-			setTimeout(() => {
-				if (document.location.href.includes("?!restrictedUse") == true) {
-					document.querySelector("#checkBoxToCheck").checked = true;
-				} else if (document.location.href.includes("?!restrictedUse") == false) {
-					document.querySelector("#checkBoxToCheck").checked = false;
-				}
-			}, "1000");
-			if (document.location.href.includes("?!restrictedUse") == false) {
-					document.location.href.replace("!21", "restrictedUse");
-				}
-		});
-	});
+	// window.addEventListener("load", function() {
+	// 	var button = document.querySelector("#form_login > div.form-row-last.check-mark-container > label > input[type=checkbox]");
+	// 	button.addEventListener("change", function(event) {
+	// 		setTimeout(() => {
+	// 			if (document.location.href.includes("?!restrictedUse") == true) {
+	// 				document.querySelector("#checkBoxToCheck").checked = true;
+	// 			} else if (document.location.href.includes("?!restrictedUse") == false) {
+	// 				document.querySelector("#checkBoxToCheck").checked = false;
+	// 			}
+	// 		}, "1000");
+	// 		if (document.location.href.includes("?!restrictedUse") == false) {
+	// 				document.location.href.replace("!21", "restrictedUse");
+	// 			}
+	// 	});
+	// });
 
 	let itemToHide = document.querySelector(".notice.danger");
 	if(window.location.href.includes("user_duplicated") == true) {
@@ -404,6 +405,7 @@ if(isset($_GET) && !isset($_GET['goToLogIn']) && !isset($_GET['loggedIn'])) {
     `;
   } else { 
 	// Job 38:1,2 / With the permission of HIM.
+	//! This needs a check
 	if(document.location.href.includes("loggedin=admin_restricted")){
 		window.location.replace("../admin_area/index.php");
 	}
@@ -492,7 +494,7 @@ gtag('config', 'UA-23581568-13');
 	if(isset($_SESSION['user_nick']) && !isset($_GET['goToLogIn'])):
 		header("Location: ../admin_area/");
 	endif;
-	if(!isset($_SESSION)){
+	if(!isset($_SESSION)) {
 		header("Location: ../index.php");
 	}
 ?>

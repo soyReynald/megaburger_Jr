@@ -15,15 +15,21 @@ if (isset($_POST) && isset($_POST['user']) && isset($_POST['password'])) {
 
   if(isset($password) && !isset($_GET['v'])) {
     if ($result->num_rows > 0) {
-      // output data of each row
+      // output data of each coming row
       while($row = $result->fetch_assoc()) {
+        // ! This is a TYPO error (error out of CONTEXT-REALITY).
         $password = $row['password'];
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
         $_SESSION['admin'] = $row['user_nick'];
       }
 
       if (password_verify($password, $hashed_password)) {
-        header("Location: /megaburguer/menu/index.php?loggedin=true");
+        $restricted = isset($_POST['restricted']) ? "on" : false;
+        if ($restricted) {
+          header("Location: /megaburguer/menu/index.php?loggedin=true&u!restricted=".$restricted);
+        } else {
+          header("Location: /megaburguer/menu/index.php?loggedin=true&u!restricted=".$restricted);
+        }
       } else {
         header("Location: ../../login/index.php?loggedin=false");
       }
@@ -87,7 +93,11 @@ if (isset($_POST['login_employee']) && !isset($_GET['v']))
           if (password_verify($password, $hashed_password)) {
             $_SESSION['employee_name'] = $row['name'];
             $_SESSION['customer_no'] = $customer_no;
-            header("Location: ../../menu/index.php?loggedin=true&employee=".$name);
+            if ($_SESSION['employee_type'] === true) {
+              header("Location: ../../menu/index.php?loggedin=true&employee=".$name);
+            } else {
+              header("Location: ../../menu/index.php?loggedin=true&employee=".$name);
+            }
           } else {
             header("Location: ../../login/index.php?loggedin=false");
           }

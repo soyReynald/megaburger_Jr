@@ -63,7 +63,8 @@ if (sizeof($_SESSION, 0) <= 0){
 	
 	<button type="button" onclick="logout()" class="logout"><a href="?go=off">Logout</a></button>
 	<div class="container">	
-			<!--<a href="../users_area/?admin_from_christ=true" class="btn btn-info users_info_btn">Go to users</a> -->
+			<!-- This is shown only to restricted users -->
+			<a href="../users_area/?admin_from_christ=true" class="btn btn-info users_info_btn">Go to users</a>
 			<a href="../admin_area/?admin_from_christ=true" class="btn btn-success add_burguer">Add a new burguer</a>
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
